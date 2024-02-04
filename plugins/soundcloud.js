@@ -75,7 +75,7 @@ title: "_[Result from m.soundcloud.com]_",
 rows: srh
 }]
 const listMessage = {
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *SOUNDCLOUD DOWNLOADER*
 
@@ -98,7 +98,7 @@ cmd({
 },
 async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let dat = `┌───[🍭Zero-Two🍭]
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
   *SELECT SONG TYPE*`
 const buttons = [
