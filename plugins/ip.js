@@ -38,7 +38,7 @@ const ISP = "ISP :"
 const MOBILE = "MOBILE :"
 const PROXY = "PROXY :"
 const r = await fetchJson('https://api.techniknews.net/ipgeo/' + q)
-const wea = `┌───[🍭Zero-Two🍭]
+const wea = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
     *IP STALKER*
     
