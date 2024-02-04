@@ -54,7 +54,7 @@ title: "_[Result from androidapksfree.]_",
 rows: srh
 }]
 const listMessage = {
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *MOD APK DOWNLOADER*
 
