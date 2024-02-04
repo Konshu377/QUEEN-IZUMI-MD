@@ -28,7 +28,7 @@ const buttonMessage = {
     image: {url: config.LOGO},
     caption: `${monspace}👋 Hello ${pushname} I'm alive now${monspace}
 
-*👾 Im Zero-Two MD whatsapp bot*
+*👾 Im QUEEN-IZUMI-MD whatsapp bot*
     
 > *Version:* ${require("../package.json").version}
 > *Memory:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
@@ -72,7 +72,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 var inital = new Date().getTime();
-let ping = await conn.sendMessage(from , { text: '```Pinging To index.js!!!```'  }, { quoted: mek } )
+let ping = await conn.sendMessage(from , { text: '```Pinging To QUEEN-IZUMI-MD!!!```'  }, { quoted: mek } )
 var final = new Date().getTime();
 return await conn.edite(ping, '*Pong*\n *' + (final - inital) + ' ms* ' )
 } catch (e) {
