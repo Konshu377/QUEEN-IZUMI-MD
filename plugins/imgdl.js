@@ -28,59 +28,45 @@ var errt =''
 if(config.LANG === 'SI') errt = "*මට කිසිවක් සොයාගත නොහැකි විය :(*"
 else errt = "*I couldn't find anything :(*"
 
+
+
 cmd({
     pattern: "img",
     react: '🖼️',
-    alias: ["gimage"],
-    desc: desc,
+    desc: desc2,
     category: "download",
-    use: '.img car',
+    use: '.img2 car',
     filename: __filename
 },
-async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!q) return await  reply(imgmsg)
-const results = await gis(q);
-let data = results.slice(0, 100)
-if (data.length < 1) return await conn.sendMessage(from, { text: N_FOUND }, { quoted: mek } )
-var srh = [];  
-let nombor = 1
-for (var i = 0; i < data.length; i++) {
-srh.push({
-title: 'Image number: ' + nombor++ ,
-description: data[i].width+'x'+data[i].height,
-rowId: prefix + 'dimg ' + data[i].url
-});
-}
-const sections = [{
-title: "Result from google. 📲",
-rows: srh
-}]
-const listMessage = { 
-text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-   *IMG DOWNLOADER 01*
-
-*🖼️ Image Name:* ${q}`,
-footer: config.FOOTER,
-title: 'Result from google. 📲',
-buttonText: 'Select Image',
-sections
-}
-await conn.listMessage(from, listMessage, mek)
-
+  *Select img list no*`
+const buttons = [
+  {buttonId: prefix + 'img1 ' + q, buttonText: {displayText: 'Image list 1'}, type: 1},
+  {buttonId: prefix + 'img2 ' + q, buttonText: {displayText: 'Image list 2'}, type: 1},
+  {buttonId: prefix + 'img3 ' + q, buttonText: {displayText: 'Image list 3'}, type: 1},
+  {buttonId: prefix + 'img4 ' + q, buttonText: {displayText: 'Image list 4'}, type: 1}
+]
+  const buttonMessage = {
+      caption: dat,
+      footer: config.FOOTER,
+      buttons: buttons,
+      headerType: 1
+  }
+return await conn.buttonMessage(from, buttonMessage, mek)
 } catch (e) {
-reply(errt)
+reply(N_FOUND)
 l(e)
 }
 })
 
 cmd({
-    pattern: "img2",
+    pattern: "img1",
     react: '🖼️',
-    alias: ["unsplash"],
     desc: desc2,
-    category: "download",
+    category: "",
     use: '.img2 car',
     filename: __filename
 },
@@ -122,11 +108,10 @@ l(e)
 })
 
 cmd({
-    pattern: "img3",
+    pattern: "img2",
     react: '🖼️',
-    alias: ["pixabay"],
     desc: desc3,
-    category: "download",
+    category: "",
     use: '.img3 car',
     filename: __filename
 },
@@ -168,11 +153,10 @@ l(e)
 })
 
 cmd({
-    pattern: "img4",
+    pattern: "img3",
     react: '🖼️',
-    alias: ["bingimage","bingimg"],
     desc: desc4,
-    category: "download",
+    category: "",
     use: '.img4 car',
     filename: __filename
 },
@@ -203,6 +187,52 @@ text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 *🖼️ Image Name:* ${q}`,
 footer: config.FOOTER,
 title: 'Result from bing 📲',
+buttonText: 'Select Image',
+sections
+}
+await conn.listMessage(from, listMessage, mek)
+
+} catch (e) {
+reply(errt)
+l(e)
+}
+})
+
+cmd({
+    pattern: "img4",
+    react: '🖼️',
+    desc: desc,
+    category: "download",
+    use: '.img car',
+    filename: __filename
+},
+async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
+if (!q) return await  reply(imgmsg)
+const results = await gis(q);
+let data = results.slice(0, 100)
+if (data.length < 1) return await conn.sendMessage(from, { text: N_FOUND }, { quoted: mek } )
+var srh = [];  
+let nombor = 1
+for (var i = 0; i < data.length; i++) {
+srh.push({
+title: 'Image number: ' + nombor++ ,
+description: data[i].width+'x'+data[i].height,
+rowId: prefix + 'dimg ' + data[i].url
+});
+}
+const sections = [{
+title: "Result from google. 📲",
+rows: srh
+}]
+const listMessage = { 
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+
+   *IMG DOWNLOADER 01*
+
+*🖼️ Image Name:* ${q}`,
+footer: config.FOOTER,
+title: 'Result from google. 📲',
 buttonText: 'Select Image',
 sections
 }
