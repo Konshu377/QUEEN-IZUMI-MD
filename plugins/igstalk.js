@@ -29,7 +29,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
 try{
 if(!q) return reply(needus)
 const dataget = await igstalker(q)
-const cap = `┌───[🍭Zero-Two🍭]
+const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
     *IG STALKER*
 
