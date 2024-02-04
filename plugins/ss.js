@@ -59,7 +59,7 @@ if(!q) return reply(imgmsg)
 let name = getRandom('')
 let data = await sswebA(q,true,'desktop')
 fs.writeFileSync(name + '.jpg', data);
-let dat = `┌───[🍭Zero-Two🍭]
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *📸 SCREENSHOT GETTER*`
 const buttons = [
@@ -93,7 +93,7 @@ if(!q) return reply(imgmsg)
 let name = getRandom('')
 let data = await sswebA(q,true,'phone')
 fs.writeFileSync(name + '.jpg', data);
-let dat = `┌───[🍭Zero-Two🍭]
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *📸 SCREENSHOT GETTER*`
 const buttons = [
@@ -127,7 +127,7 @@ if(!q) return reply(imgmsg)
 let name = getRandom('')
 let data = await sswebA(q,true,'tablet')
 fs.writeFileSync(name + '.jpg', data);
-let dat = `┌───[🍭Zero-Two🍭]
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *📸 SCREENSHOT GETTER*`
 const buttons = [
