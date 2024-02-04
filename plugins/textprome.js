@@ -53,7 +53,7 @@ title: "Result from textpro. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *TEXTPRO LOGO 01*
 
@@ -100,7 +100,7 @@ title: "Result from textpro. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *TEXTPRO LOGO 02*
 
