@@ -10,8 +10,8 @@ if(config.LANG === 'SI') imgmsg = "```කරුණාකර නමක් දෙ�
 else imgmsg = "```Please give me a name !```"
 
 var imgmsg2 =''
-if(config.LANG === 'SI') imgmsg2 = "*උදා: .photooxy2 vihanga+ashinshana*"
-else imgmsg2 = "*Ex: .photooxy2 vihanga+ashinshana*"
+if(config.LANG === 'SI') imgmsg2 = "*උදා: .photooxy2 Vajira+Timasha*"
+else imgmsg2 = "*Ex: .photooxy2 Vajira+Timasha*"
 
 var desc =''
 if(config.LANG === 'SI') desc = "එය වචන 1කින් photooxy logos නිර්මාණය කරයි.."
@@ -58,7 +58,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *PHOTOOXY LOGO 01*
 
@@ -105,7 +105,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *PHOTOOXY LOGO 02*
 
@@ -158,7 +158,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *PHOTOOXY LOGO 03*
 
