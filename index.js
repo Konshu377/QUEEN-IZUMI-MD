@@ -588,7 +588,7 @@ console.log(isError)
   })
 }
 app.get("/", (req, res) => {
-  res.send("📟 Astro Working successfully!");
+  res.send("📟 Vajira Working successfully!");
 });
 app.listen(port, () => console.log(`Vajira Server listening on port http://localhost:${port}`));
 setTimeout(async() => {
