@@ -1,9 +1,9 @@
 {
-"name": "zero-two-md",    
+"name": "QUEEN-IZUMI-MD",    
 "version": "1.0.0",
 "scripts": {
-"start": "pm2 start index.js --deep-monitoring --attach --name zero-two",
-"stop": "pm2 stop zero-two",
+"start": "pm2 start index.js --deep-monitoring --attach --name QUEEN-IZUMI-MD",
+"stop": "pm2 stop QUEEN-IZUMI-MD",
 "restart": "git pull && npm stop && npm start",
 "stash": "git stash && git stash drop"
 },
