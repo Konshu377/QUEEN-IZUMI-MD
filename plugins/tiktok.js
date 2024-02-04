@@ -50,7 +50,7 @@ l = data
 }
 
 
-let dat = `┌───[🍭Zero-Two🍭]
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
 *TIKTOK DOWNLOADER*
 
