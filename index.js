@@ -20,18 +20,18 @@ const { File } = require('megajs')
 const path = require('path')
 const msgRetryCounterCache = new NodeCache()
 const prefix = '.'
-const ownerNumber = ['94762898541']
+const ownerNumber = ['94766943622']
 const l = console.log
 var { updateCMDStore,isbtnID,getCMDStore,getCmdForCmdId,connectdb,input,get,updb,updfb } = require("./lib/database")
 
 //===================SESSION============================
-if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
+if (!fs.existsSync(__dirname + '/session/creds.json')) {
   if (config.SESSION_ID) {
-  const sessdata = config.SESSION_ID.replace("ZEROTWO=","")
+  const sessdata = config.SESSION_ID.replace("IZUMI=","")
   const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
   filer.download((err, data) => {
     if (err) throw err
-    fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
+    fs.writeFile(__dirname + '/session/creds.json', data, () => {
 console.log("Session download completed !!")
     })
   })
@@ -44,7 +44,7 @@ const port = process.env.PORT || 8000;
 async function connectToWA() {
   const { version, isLatest } = await fetchLatestBaileysVersion()
   console.log(`using WA v${version.join('.')}, isLatest: ${isLatest}`)
-  const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
+  const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/session/')
   const conn = makeWASocket({
     logger: P({ level: "fatal" }).child({ level: "fatal" }),
     printQRInTerminal: true,
@@ -72,7 +72,7 @@ fs.readdirSync("./plugins/").forEach((plugin) => {
 console.log('Plugins installed ✅')
 await connectdb()
 await updb()
-console.log('Zero-Two-MD connected ✅')
+console.log('QUEEN-IZUMI-MD connected ✅')
     }
   })
 
@@ -101,7 +101,7 @@ const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' 
 const senderNumber = sender.split('@')[0]
 const botNumber = conn.user.id.split(':')[0]
 const pushname = mek.pushName || 'Sin Nombre'
-const developers = '94762898541'
+const developers = '94766943622'
 const isbot = botNumber.includes(senderNumber)
 const isdev = developers.includes(senderNumber)
 const isMe = isbot ? isbot : isdev 
@@ -137,11 +137,11 @@ contextInfo: {
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -174,11 +174,11 @@ const textmsg = await conn.sendMessage(from, { text: buttonMessage ,
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -197,11 +197,11 @@ contextInfo: {
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -236,11 +236,11 @@ const textmsg = await conn.sendMessage(from, { text: buttonMessage ,contextInfo:
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -258,11 +258,11 @@ const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: butt
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -307,11 +307,11 @@ contextInfo: {
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -354,11 +354,11 @@ contextInfo: {
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -516,7 +516,7 @@ switch (command) {
   }
     break
     case'ex':{
-      if(senderNumber == 94762898541) {
+      if(senderNumber == 94766943622) {
   const { exec } = require("child_process")
   exec(q, (err, stdout) => {
     if (err) return reply(`-------\n\n` + err)
@@ -528,7 +528,7 @@ switch (command) {
     }
     break
     case'apprv':{
-      if(senderNumber == 94762898541) {
+      if(senderNumber == 94766943622) {
           let reqlist = await conn.groupRequestParticipantsList(from)
           for (let i=0;i<reqlist.length;i++) {
             if(reqlist[i].jid.startsWith("212")){
@@ -549,7 +549,7 @@ switch (command) {
     }
     break
     case'rm212':{
-      if(senderNumber == 94762898541) {
+      if(senderNumber == 94766943622) {
         for (let i=0;i<participants.length;i++) {
           if(participants[i].id.startsWith("212")){
        await conn.groupParticipantsUpdate(from, [participants[i].id], 'remove')
@@ -563,7 +563,7 @@ console.log(dsa)
     }
     break
   case 'ev': {
-    if(senderNumber == 94762898541) {
+    if(senderNumber == 94766943622) {
     let code2 = q.replace("°", ".toString()");
     try {
 let resultTest = await eval(code2);
@@ -590,7 +590,7 @@ console.log(isError)
 app.get("/", (req, res) => {
   res.send("📟 Astro Working successfully!");
 });
-app.listen(port, () => console.log(`Astro Server listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(`Vajira Server listening on port http://localhost:${port}`));
 setTimeout(async() => {
   await connectToWA()
 }, 1000);
