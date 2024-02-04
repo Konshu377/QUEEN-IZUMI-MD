@@ -93,7 +93,7 @@ try{
 if (!fbreg(q)) return await  reply(urlneed)
 let data = await fbDownloader(q)
 let l = data.download
-let dat = `┌───[🍭Zero-Two🍭]
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *FB DOWNLOADER*
 
