@@ -156,13 +156,13 @@ conn.buttonMessage2 = async (jid, msgData,quotemek) => {
     const CMD_ID_MAP = []
     msgData.buttons.forEach((button, bttnIndex) => {
 const mainNumber = `${bttnIndex + 1}`;
-result += `\n*${mainNumber} | ${button.buttonText.displayText}*\n`;
+result += `*${mainNumber} | ${button.buttonText.displayText}*\n`;
 
 CMD_ID_MAP.push({ cmdId: mainNumber, cmd: button.buttonId });
     });
 
     if (msgData.headerType === 1) {
-const buttonMessage = `${msgData.text}\n\n🔢 Reply below number,${result}\n\n${msgData.footer}`
+const buttonMessage = `${msgData.text}\n\n🔢 Reply you select number,${result}\n${msgData.footer}`
 const textmsg = await conn.sendMessage(from, { text: buttonMessage ,
   contextInfo: {
     mentionedJid: [ '' ],
@@ -185,7 +185,7 @@ showAdAttribution: true
 }}, { quoted: quotemek || mek})
 await updateCMDStore(textmsg.key.id, CMD_ID_MAP);
     } else if (msgData.headerType === 4) {
-const buttonMessage = `${msgData.caption}\n\n🔢 Reply below number,${result}\n\n${msgData.footer}`
+const buttonMessage = `${msgData.caption}\n\n🔢 Reply below number,${result}\n${msgData.footer}`
 const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: buttonMessage ,
 contextInfo: {
     mentionedJid: [ '' ],
@@ -219,13 +219,13 @@ conn.buttonMessage = async (jid, msgData, quotemek) => {
     const CMD_ID_MAP = []
     msgData.buttons.forEach((button, bttnIndex) => {
 const mainNumber = `${bttnIndex + 1}`;
-result += `\n*${mainNumber} | ${button.buttonText.displayText}*\n`;
+result += `*${mainNumber} | ${button.buttonText.displayText}*\n`;
 
 CMD_ID_MAP.push({ cmdId: mainNumber, cmd: button.buttonId });
     });
 
     if (msgData.headerType === 1) {
-const buttonMessage = `${msgData.text || msgData.caption}\n\n🔢 Reply below number,${result}\n\n└───────────◉\n\n${msgData.footer}`
+const buttonMessage = `${msgData.text || msgData.caption}\n\n🔢 Reply below number,${result}\n${msgData.footer}`
 const textmsg = await conn.sendMessage(from, { text: buttonMessage ,contextInfo: {
     mentionedJid: [ '' ],
     groupMentions: [],
@@ -247,7 +247,7 @@ showAdAttribution: true
 }}, { quoted: quotemek || mek})
 await updateCMDStore(textmsg.key.id, CMD_ID_MAP);
     } else if (msgData.headerType === 4) {
-const buttonMessage = `${msgData.caption}\n\n🔢 Reply below number,${result}\n\n└───────────◉\n\n${msgData.footer}`
+const buttonMessage = `${msgData.caption}\n\n🔢 Reply below number,${result}\n${msgData.footer}`
 const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: buttonMessage ,contextInfo: {
     mentionedJid: [ '' ],
     groupMentions: [],
@@ -282,7 +282,7 @@ conn.listMessage2 = async (jid, msgData, quotemek) => {
 
     msgData.sections.forEach((section, sectionIndex) => {
 const mainNumber = `${sectionIndex + 1}`;
-result += `\n*[${mainNumber}] ${section.title}*\n`;
+result += `*[${mainNumber}] ${section.title}*\n`;
 
 section.rows.forEach((row, rowIndex) => {
   const subNumber = `${mainNumber}.${rowIndex + 1}`;
@@ -329,7 +329,7 @@ conn.listMessage = async (jid, msgData, quotemek) => {
 
     msgData.sections.forEach((section, sectionIndex) => {
 const mainNumber = `${sectionIndex + 1}`;
-result += `\n*[${mainNumber}] ${section.title}*\n`;
+result += `*[${mainNumber}] ${section.title}*\n`;
 
 section.rows.forEach((row, rowIndex) => {
   const subNumber = `${mainNumber}.${rowIndex + 1}`;
@@ -342,7 +342,7 @@ section.rows.forEach((row, rowIndex) => {
 });
     });
 
-    const listMessage = `${msgData.text}\n\n${msgData.buttonText},${result}\n\n└───────────◉\n\n${msgData.footer}`
+    const listMessage = `${msgData.text}\n\n${msgData.buttonText},${result}\n${msgData.footer}`
     const text = await conn.sendMessage(from, { text: listMessage, 
 contextInfo: {
     mentionedJid: [ '' ],
