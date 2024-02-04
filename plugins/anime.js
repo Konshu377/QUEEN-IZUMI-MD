@@ -39,7 +39,7 @@ rowId: `${prefix}animeeg ${i.mal_id}`
 sections.push(list)   
 }
 let listset = {
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *ANIME SEARCH*
    
