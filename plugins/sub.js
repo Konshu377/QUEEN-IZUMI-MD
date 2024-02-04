@@ -44,7 +44,7 @@ title: "_[Result from Baiscopelk.com]_",
 rows: srh
 }]
 const listMessage = {
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *SI SUB DOWNLOADER*
 
