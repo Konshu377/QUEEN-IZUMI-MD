@@ -89,7 +89,7 @@ rowId: '.antibot off'
 ]},
 ]
 const listMessage = {
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
      *GROUP SETTINGS*
 
@@ -142,7 +142,7 @@ rowId: '.lang SI'
 ]}
 ]
 const listMessage = {
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
      *BOT\'S SETTINGS*
 
@@ -198,7 +198,7 @@ rowId: '.alivemg ' + q
 title: "Footer Text / Caption",
 rows: [{
 title: 'DEFAULT 🎲',
-rowId: '.footertxt ©𝚉𝙴𝚁𝙾-𝚃𝚆𝙾 𝙼𝙳'
+rowId: '.footertxt ©ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ'
 },
 {
 title: 'NEW 🌱',
@@ -209,7 +209,7 @@ rowId: '.footertxt ' + q
 title: "Logo",
 rows: [{
 title: 'DEFAULT 🎲',
-rowId: '.setlogo https://github.com/vihangayt0/ZeroTwo-Uploads/blob/main/ZERO-TWO.png?raw=true'
+rowId: '.setlogo https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg'
 },
 {
 title: 'NEW 🌱',
@@ -218,7 +218,7 @@ rowId: '.setlogo ' + q
 ]},
 ]
 const listMessage = {
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
      *BOT\'S CONFIG*
 
