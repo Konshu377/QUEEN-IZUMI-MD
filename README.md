@@ -55,7 +55,7 @@
 <a href="https://replit.com/@VajiraRathnayak/QUEEN-IZUMI-PAIRING-CODE-1?v=1"><img src="https://img.shields.io/badge/REPLIT-PAIR%20CODE-blue" alt="LOGIN WITH PAIR CODE" width="250"></a>
 
 
-<a href="https://queenizumi-qr-9169451c5e87.herokuapp.com/"><img src="https://img.shields.io/badge/HEROKU-QR%20CODE-black" alt="LOGIN WITH QR CODE" width="250"></a>
+<a href="https://izumi-cred-file-185225da6048.herokuapp.com/"><img src="https://img.shields.io/badge/HEROKU-QR%20CODE-black" alt="LOGIN WITH QR CODE" width="250"></a>
 
 <hr>
 
