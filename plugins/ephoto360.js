@@ -44,7 +44,7 @@ cmd({
     alias: ["logo6","ephoto360","ephoto"],
     desc: desc,
     category: "logo",
-    use: '.ephoto360 vihanga yt',
+    use: '.ephoto360 VajiraTech',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -191,7 +191,7 @@ rowId: prefix + 'dlogo6 ' + q + '+' + 'https://en.ephoto360.com/create-multicolo
 
 ]}]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *EPHOTO360 LOGO*
 
@@ -214,7 +214,7 @@ cmd({
     alias: ["ytbanner","cover","channelbanner"],
     desc: desc2,
     category: "logo",
-    use: '.banner vihanga+yt',
+    use: '.banner VajiraTech+yt',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -237,7 +237,7 @@ cmd({
     alias: ["ytbanner2","cover2","channelbanner2"],
     desc: desc2,
     category: "logo",
-    use: '.banner2 vihanga+yt',
+    use: '.banner2 VajiraTech+yt',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -260,7 +260,7 @@ cmd({
     alias: ["ytbanner3","cover3","channelbanner3"],
     desc: desc2,
     category: "logo",
-    use: '.banner3 vihanga+yt',
+    use: '.banner3 VajiraTech+yt',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -283,7 +283,7 @@ cmd({
     alias: ["ytbanner4","cover4","channelbanner4"],
     desc: desc2,
     category: "logo",
-    use: '.banner4 vihanga+yt',
+    use: '.banner4 VajiraTech+yt',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -306,7 +306,7 @@ cmd({
     alias: ["ytbanner5","cover5","channelbanner5"],
     desc: desc2,
     category: "logo",
-    use: '.banner5 vihanga+yt',
+    use: '.banner5 VajiraTech+yt',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
