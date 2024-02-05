@@ -9,6 +9,7 @@ const {
 } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const P = require('pino')
+var os = require('os')
 const config = require('./config')
 const qrcode = require('qrcode-terminal')
 const NodeCache = require('node-cache')
