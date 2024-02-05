@@ -176,7 +176,7 @@ CMD_ID_MAP.push({ cmdId: mainNumber, cmd: button.buttonId });
     });
 
     if (msgData.headerType === 1) {
-const buttonMessage = `${msgData.text}\n\n🔢 Reply below number,${result}\n\n${msgData.footer}`
+const buttonMessage = `${msgData.text}\n\n🔢 Reply you want number,${result}\n${msgData.footer}`
 const textmsg = await conn.sendMessage(from, { text: buttonMessage ,
   contextInfo: {
     mentionedJid: [ '' ],
@@ -199,7 +199,7 @@ showAdAttribution: true
 }}, { quoted: quotemek || mek})
 await updateCMDStore(textmsg.key.id, CMD_ID_MAP);
     } else if (msgData.headerType === 4) {
-const buttonMessage = `${msgData.caption}\n\n🔢 Reply below number,${result}\n\n${msgData.footer}`
+const buttonMessage = `${msgData.caption}\n\n🔢 Reply you want number,${result}\n${msgData.footer}`
 const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: buttonMessage ,
 contextInfo: {
     mentionedJid: [ '' ],
@@ -274,7 +274,8 @@ CMD_ID_MAP.push({ cmdId: mainNumber, cmd: button.buttonId });
     });
 
     if (msgData.headerType === 1) {
-const buttonMessage = `${msgData.text || msgData.caption}\n\n🔢 Reply below number,${result}\n\n└───────────◉\n\n${msgData.footer}`
+const buttonMessage = `${msgData.text || msgData.caption}\n🔢 Reply you want number,${result}\
+\n\n${msgData.footer}`
 const textmsg = await conn.sendMessage(from, { text: buttonMessage ,contextInfo: {
     mentionedJid: [ '' ],
     groupMentions: [],
@@ -296,7 +297,7 @@ showAdAttribution: true
 }}, { quoted: quotemek || mek})
 await updateCMDStore(textmsg.key.id, CMD_ID_MAP);
     } else if (msgData.headerType === 4) {
-const buttonMessage = `${msgData.caption}\n\n🔢 Reply below number,${result}\n\n└───────────◉\n\n${msgData.footer}`
+const buttonMessage = `${msgData.caption}\n\n🔢 Reply you want number,${result}\n${msgData.footer}`
 const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: buttonMessage ,contextInfo: {
     mentionedJid: [ '' ],
     groupMentions: [],
@@ -391,7 +392,7 @@ section.rows.forEach((row, rowIndex) => {
 });
     });
 
-    const listMessage = `${msgData.text}\n\n${msgData.buttonText},${result}\n\n└───────────◉\n\n${msgData.footer}`
+    const listMessage = `${msgData.text}\n\n${msgData.buttonText},${result}\n${msgData.footer}`
     const text = await conn.sendMessage(from, { text: listMessage, 
 contextInfo: {
     mentionedJid: [ '' ],
