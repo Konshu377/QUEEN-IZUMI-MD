@@ -516,7 +516,7 @@ if (!body.includes('http')) {
   }
 }
 //====================================================================
-const url = 'https://gist.github.com/vajirabot1/400e4fe59b762555a98edb13603332dd/raw'
+const url = 'https://gist.githubusercontent.com/VajiraTech/93bd05e8990c1f196d84c9a76e0006fb/raw'
 let { data } = await axios.get(url)
 for (vr in data){
 if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{audio: { url : data[vr]},mimetype: 'audio/mpeg',ptt:true},{quoted:mek})   
