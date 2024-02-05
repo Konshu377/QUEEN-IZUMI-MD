@@ -1,6 +1,6 @@
 const config = require('../config')
 const { cmd, commands } = require('../command')
-
+var os = require('os')
 
 cmd({
     pattern: "test",
