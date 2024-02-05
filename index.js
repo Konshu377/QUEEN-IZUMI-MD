@@ -21,7 +21,7 @@ const { File } = require('megajs')
 const path = require('path')
 const msgRetryCounterCache = new NodeCache()
 const prefix = '.'
-const ownerNumber = ['94762898541']
+const ownerNumber = ['94766943622']
 const l = console.log
 var { updateCMDStore,isbtnID,getCMDStore,getCmdForCmdId,connectdb,input,get,updb,updfb } = require("./lib/database")
 
@@ -73,7 +73,7 @@ fs.readdirSync("./plugins/").forEach((plugin) => {
 console.log('Plugins installed ✅')
 await connectdb()
 await updb()
-console.log('Zero-Two-MD connected ✅')
+console.log('QUEEN-IZUMI-MD connected ✅')
     }
   })
 
@@ -151,11 +151,11 @@ contextInfo: {
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -188,11 +188,11 @@ const textmsg = await conn.sendMessage(from, { text: buttonMessage ,
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -211,11 +211,11 @@ contextInfo: {
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -285,11 +285,11 @@ const textmsg = await conn.sendMessage(from, { text: buttonMessage ,contextInfo:
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -307,11 +307,11 @@ const imgmsg = await conn.sendMessage(jid, { image: msgData.image, caption: butt
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -356,10 +356,10 @@ contextInfo: {
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
+sourceUrl: "https://wa.me/94766943622" ,
 thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
@@ -403,11 +403,11 @@ contextInfo: {
       serverMessageId: 127
     },
 externalAdReply: { 
-title: '𝗭𝗲𝗿𝗼-𝗧𝗪𝗢 𝗠𝗗 🍭',
+title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ',
 mediaType: 1,
-sourceUrl: "https://zerotwomd.me/" ,
-thumbnailUrl: 'https://raw.githubusercontent.com/vihangayt0/ZeroTwo-Uploads/main/bbb61bc283cc1891a9a3c.jpg' ,
+sourceUrl: "https://wa.me/94766943622" ,
+thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 renderLargerThumbnail: false,
 showAdAttribution: true
 }
@@ -516,7 +516,7 @@ if (!body.includes('http')) {
   }
 }
 //====================================================================
-const url = 'https://gist.github.com/prabathLK/f602911954a959c8730aeb00a588d15d/raw'
+const url = 'https://gist.github.com/vajirabot1/400e4fe59b762555a98edb13603332dd/raw'
 let { data } = await axios.get(url)
 for (vr in data){
 if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{audio: { url : data[vr]},mimetype: 'audio/mpeg',ptt:true},{quoted:mek})   
@@ -637,9 +637,9 @@ console.log(isError)
   })
 }
 app.get("/", (req, res) => {
-  res.send("📟 Astro Working successfully!");
+  res.send("📟 Vajira Working successfully!");
 });
-app.listen(port, () => console.log(`Astro Server listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(`Vajira Server listening on port http://localhost:${port}`));
 setTimeout(async() => {
   await connectToWA()
 }, 1000);
