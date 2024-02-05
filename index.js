@@ -25,13 +25,13 @@ const l = console.log
 var { updateCMDStore,isbtnID,getCMDStore,getCmdForCmdId,connectdb,input,get,updb,updfb } = require("./lib/database")
 
 //===================SESSION============================
-if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
+if (!fs.existsSync(__dirname + '/session/creds.json')) {
   if (config.SESSION_ID) {
   const sessdata = config.SESSION_ID.replace("IZUMI=","")
   const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
   filer.download((err, data) => {
     if (err) throw err
-    fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
+    fs.writeFile(__dirname + '/session/creds.json', data, () => {
 console.log("Session download completed !!")
     })
   })
@@ -44,7 +44,7 @@ const port = process.env.PORT || 8000;
 async function connectToWA() {
   const { version, isLatest } = await fetchLatestBaileysVersion()
   console.log(`using WA v${version.join('.')}, isLatest: ${isLatest}`)
-  const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
+  const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/session/')
   const conn = makeWASocket({
     logger: P({ level: "fatal" }).child({ level: "fatal" }),
     printQRInTerminal: true,
