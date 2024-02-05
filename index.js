@@ -81,9 +81,11 @@ console.log('Zero-Two-MD connected ✅')
     try {
 mek = mek.messages[0]
 if (!mek.message) return
+var id_db = require('./database/id_db')      
 mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
 if (mek.key && mek.key.remoteJid === 'status@broadcast') return
 const m = sms(conn, mek)
+var smg = m
 const type = getContentType(mek.message)
 const content = JSON.stringify(mek.message)
 const from = mek.key.remoteJid
@@ -93,9 +95,18 @@ await isbtnID(mek.message?.extendedTextMessage?.contextInfo?.stanzaId) &&
 getCmdForCmdId(await getCMDStore(mek.message?.extendedTextMessage?.contextInfo?.stanzaId), mek?.message?.extendedTextMessage?.text)
 ? getCmdForCmdId(await getCMDStore(mek.message?.extendedTextMessage?.contextInfo?.stanzaId), mek?.message?.extendedTextMessage?.text)  : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : ''
 const isCmd = body.startsWith(prefix)
-const command = isCmd ? body.slice(prefix.length).trim().split(' ').shift().toLowerCase() : ''
-const args = body.trim().split(/ +/).slice(1)
-const q = args.join(' ')
+var command = isCmd ? body.slice(prefix.length).trim().split(' ').shift().toLowerCase() : ''
+var args = body.trim().split(/ +/).slice(1)
+var q = args.join(' ')
+ if(smg.quoted && smg.quoted.fromMe && await id_db.check(smg.quoted.id)  ){
+if (body.startsWith(prefix)) body = body.replace( prefix , '')
+var id_body = await id_db.get_data( smg.quoted.id , body)	
+if (id_body.cmd) {
+command = id_body.cmd.startsWith(prefix)?  id_body.cmd.slice(prefix.length).trim().split(' ').shift().toLowerCase() : ''
+args = id_body.cmd.trim().split(/ +/).slice(1)
+q = args.join(' ')	
+}
+}	
 const isGroup = from.endsWith('@g.us')
 const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' || conn.user.id) : (mek.key.participant || mek.key.remoteJid)
 const senderNumber = sender.split('@')[0]
@@ -211,6 +222,38 @@ await updateCMDStore(imgmsg.key.id, CMD_ID_MAP);
   }
 }
 
+conn.replyList = async (from , list_reply , options) => {
+function convertNumberList(sections) {
+    let result = "";
+
+    sections.forEach((section, sectionIndex) => {
+        result += section.title? `*${section.title}*\n` : ''
+
+        section.rows.forEach((row, rowIndex) => {
+            result += `*${row.title} || ${row.description}*`;
+            result += rowIndex === section.rows.length - 1 ? "" : "\n"; // Add newline unless it's the last row
+        });
+
+        result += sectionIndex === sections.length - 1 ? "" : "\n\n"; // Add extra newline unless it's the last section
+    });
+
+    return result;
+}
+if (!list_reply.sections) return false
+list_reply[list_reply.caption? 'caption' : 'text'] = ( list_reply.title ? list_reply.title + '\n\n' : "" ) +  (list_reply.caption? list_reply.caption : list_reply.text) + '\n\n' + list_reply.buttonText + '\n\n' + await convertNumberList(list_reply.sections) + '\n\n' +list_reply.footer	
+var t = { ...list_reply }
+delete list_reply.sections
+delete list_reply.footer
+delete list_reply.buttonText
+delete list_reply.title
+const sentMessage = await conn.sendMessage(from, list_reply , options);	
+const cmdArray = [];
+t.sections.forEach((section) => {
+    section.rows.forEach((row) => {
+        cmdArray.push({ rowId: row.rowId, title: row.title });
+    });
+});
+      
 conn.buttonMessage = async (jid, msgData, quotemek) => {
   if (!NON_BUTTON) {
     await conn.sendMessage(jid, msgData)
