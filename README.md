@@ -68,7 +68,7 @@
 
 ## DEPLOYMENT METHODS
 
-[CLICK TO SELECT DEPLOY PLATFORM](https://queen-izumi-web.vercel.app/assets/deployments.html)
+[CLICK TO SELECT DEPLOY PLATFORM](https://vajirarathnayaka.github.io/QUEEN-IZUMI-WEB/assets/deployments.html)
 
 <hr>
 
