@@ -254,6 +254,9 @@ t.sections.forEach((section) => {
         cmdArray.push({ rowId: row.rowId, title: row.title });
     });
 });
+for ( let i = 0; i < cmdArray.length; i++) {	
+await ID_DB.input_data(cmdArray[i].rowId ,cmdArray[i].title , sentMessage.key.id ) 
+}}  
       
 conn.buttonMessage = async (jid, msgData, quotemek) => {
   if (!NON_BUTTON) {
