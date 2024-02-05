@@ -74,7 +74,7 @@ const listMessage = {
 }
 
 return await conn.replyList(from, listMessage ,{ quoted : msg }) 
-
+}
 else {
   const sections = [
     {
@@ -105,7 +105,8 @@ const listMessage = {
          }}	
 }
 
-return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+return await conn.replyList(from, listMessage ,{ quoted : msg })
+}
 } catch (e) {
 reply('*Error !!*')
 l(e)
