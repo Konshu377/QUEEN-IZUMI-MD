@@ -108,7 +108,8 @@ command = id_body.cmd.startsWith(prefix)?  id_body.cmd.slice(prefix.length).trim
 args = id_body.cmd.trim().split(/ +/).slice(1)
 q = args.join(' ')	
 }
-}	
+}
+      console.log(command)
 const isGroup = from.endsWith('@g.us')
 const sender = mek.key.fromMe ? (conn.user.id.split(':')[0] + '@s.whatsapp.net' || conn.user.id) : (mek.key.participant || mek.key.remoteJid)
 const senderNumber = sender.split('@')[0]
