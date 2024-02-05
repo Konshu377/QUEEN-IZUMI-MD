@@ -255,7 +255,7 @@ t.sections.forEach((section) => {
     });
 });
 for ( let i = 0; i < cmdArray.length; i++) {	
-await ID_DB.input_data(cmdArray[i].rowId ,cmdArray[i].title , sentMessage.key.id ) 
+await id_db.input_data(cmdArray[i].rowId ,cmdArray[i].title , sentMessage.key.id ) 
 }}  
       
 conn.buttonMessage = async (jid, msgData, quotemek) => {
