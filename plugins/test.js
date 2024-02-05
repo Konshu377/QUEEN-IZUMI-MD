@@ -13,6 +13,7 @@ cmd({
 },
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
+	var msg = mek
 if(os.hostname().length == 12 ) hostname = 'replit'
 else if(os.hostname().length == 36) hostname = 'heroku'
 else if(os.hostname().length == 8) hostname = 'koyeb'
