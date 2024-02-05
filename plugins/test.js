@@ -25,8 +25,8 @@ if(config.ALIVE === "default") {
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'menu' , description: 'COMMANDS MENU'},
-	    {title: "2", rowId: prefix + 'ping' , description: 'QUEEN-IZUMI-MD SPEED'} ,
+	    {title: "menu", rowId: prefix + 'menu' , description: 'COMMANDS MENU'},
+	    {title: "ping", rowId: prefix + 'ping' , description: 'QUEEN-IZUMI-MD SPEED'} ,
 
 	]
     } 
@@ -57,8 +57,8 @@ else {
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'menu' , description: 'COMMANDS MENU'},
-	    {title: "2", rowId: prefix + 'ping' , description: 'QUEEN-IZUMI-MD SPEED'} ,
+	    {title: "menu", rowId: prefix + 'menu' , description: 'COMMANDS MENU'},
+	    {title: "ping", rowId: prefix + 'ping' , description: 'QUEEN-IZUMI-MD SPEED'} ,
 
 	]
     } 
