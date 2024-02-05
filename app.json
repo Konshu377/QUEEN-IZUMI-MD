@@ -25,7 +25,11 @@
             "description": "Enter you pushed app Name",
             "required": true,
             "value": ""
-        }
+        },
+        "ONLY_GROUP": {
+            "description": "Add the worktype of the Bot ( private , public , only_group )",
+            "required": true,
+            "value": "private"
         }
     },
     "buildpacks": [
