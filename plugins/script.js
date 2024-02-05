@@ -2,7 +2,7 @@ const config = require('../config')
 const { cmd, commands } = require('../command')
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper');
-
+var os = require('os')
 var tmsg =''
 if(config.LANG === 'SI') tmsg = 'එය Bot link ලබා දෙයි.'
 else tmsg = "It gives bot link."
