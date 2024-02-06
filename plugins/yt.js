@@ -94,31 +94,60 @@ if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
 if(isUrl(q) && q.includes('/shorts')){let dat = `┌───[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
   *SELECT TYPE*`
-const buttons = [
-  {buttonId: prefix + 'selectaud ' + q, buttonText: {displayText: 'SONG'}, type: 1},
-  {buttonId: prefix + 'selectvid ' + q, buttonText: {displayText: 'VIDEO'}, type: 1}
+
+const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'selectaud ' + q , description: 'SONG'},
+	    {title: "2", rowId: prefix + 'selectvid ' + q , description: 'VIDEO'} ,
+
+	]
+    } 
 ]
-const buttonMessage = {
-    caption: dat,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 1
+const listMessage = {
+  text: dat,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🥽 𝗔𝗤𝗨𝗔𝗕𝗢𝗧 𝗠𝗗 V2💦',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/85fe740b2385a55178500.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-return await conn.buttonMessage(from, buttonMessage, mek)}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 				      
+}
 if(ytreg(q)){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
 *SELECT SONG TYPE*`
-const buttons = [
-{buttonId: prefix + 'ytdocs ' + q, buttonText: {displayText: 'DOCUMENT SONG'}, type: 1},
-{buttonId: prefix + 'ytmp3 ' + q, buttonText: {displayText: 'AUDIO SONG'}, type: 1}
+const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'ytdocs ' + q , description: 'DOCUMENT SONG'},
+	    {title: "2", rowId: prefix + 'ytmp3 '  + q , description: 'AUDIO SONG'} ,
+
+	]
+    } 
 ]
-const buttonMessage = {
- caption: dat,
- footer: config.FOOTER,
- buttons: buttons,
- headerType: 1
+const listMessage = {
+  text: dat,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections }	
+
+	     
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+
 }
-return await conn.buttonMessage(from, buttonMessage, mek)}
 let yts = require("yt-search")
 let search = await yts(q)
 let anu = search.videos[0]
@@ -137,18 +166,38 @@ const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 ╏👽 *Author:* ${anu.author.name}
 ⦁
 ╏📡 *Url* : ${anu.url}`
-const buttons = [
-  {buttonId: prefix + 'selectaud ' + anu.url, buttonText: {displayText: 'SONG'}, type: 1},
-  {buttonId: prefix + 'selectvid ' + anu.url, buttonText: {displayText: 'VIDEO'}, type: 1}
+
+const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'selectaud ' + q , description: 'SONG'},
+	    {title: "2", rowId: prefix + 'selectvid ' + q , description: 'VIDEO'} ,
+
+	]
+    } 
 ]
-const buttonMessage = {
-    image: {url: anu.thumbnail},
-    caption: cap,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
+const listMessage = {
+  image: {url: anu.thumbnail},
+  caption: cap,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🥽 𝗔𝗤𝗨𝗔𝗕𝗢𝗧 𝗠𝗗 V2💦',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/85fe740b2385a55178500.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-await conn.buttonMessage(from, buttonMessage)
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+
 } catch (e) {
   reply(N_FOUND)
   l(e)
@@ -364,6 +413,7 @@ await conn.buttonMessage(from, buttonMessage, mek)
 //---------------------------------------------------------------------------
 
 cmd({
+  pattern: "selectaud",
   alias: ["selectaud"],
   filename: __filename
 },
@@ -372,18 +422,37 @@ try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
   *SELECT SONG TYPE*`
-const buttons = [
-  {buttonId: prefix + 'ytdocs ' + q, buttonText: {displayText: 'Document type Song'}, type: 1},
-  {buttonId: prefix + 'ytmp3 ' + q, buttonText: {displayText: 'Audio type Song'}, type: 1},
-  {buttonId: prefix + 'ytinfo ' + q, buttonText: {displayText: 'To see Song info'}, type: 1}
+
+	 const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'ytdocs ' + q , description: 'Document type Song'},
+	    {title: "2", rowId: prefix + 'ytmp3 ' + q , description: 'Audio type Song'} ,
+	    {title: "3", rowId: prefix + 'ytinfo ' + q , description: 'To see Song info'} 
+
+	]
+    } 
 ]
-  const buttonMessage = {
-      caption: dat,
-      footer: config.FOOTER,
-      buttons: buttons,
-      headerType: 1
-  }
-return await conn.buttonMessage(from, buttonMessage, mek)
+	const listMessage = {
+ text : data ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🥽 𝗔𝗤𝗨𝗔𝗕𝗢𝗧 𝗠𝗗 V2💦',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/85fe740b2385a55178500.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+ 
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
 } catch (e) {
 reply(N_FOUND)
 l(e)
