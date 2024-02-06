@@ -143,7 +143,7 @@ else if(os.hostname().length == 8) hostname = 'koyeb'
 else hostname = os.hostname()
 let monspace ='```'
 let monspacenew ='`'
-if(config.ALIVE === "default") {
+{
  const sections = [
     {
 	title: "",
