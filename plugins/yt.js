@@ -1,7 +1,6 @@
 const config = require('../config')
 const { cmd, commands } = require('../command')
 var os = require('os')
-const l = console.log
 function ytreg(url) {
     const ytIdRegex = /(?:http(?:s|):\/\/|)(?:(?:www\.|)youtube(?:\-nocookie|)\.com\/(?:watch\?.*(?:|\&)v=|embed|shorts\/|v\/)|youtu\.be\/)([-_0-9A-Za-z]{11})/
     return ytIdRegex.test(url);
@@ -166,57 +165,35 @@ cmd({
     desc: descv,
     category: "download",
     filename: __filename
-
 },
-
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!q) return await  reply(imgmsg)
-if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
-if(isUrl(q) && q.includes('/shorts')){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+	var msg = mek
+if(os.hostname().length == 12 ) hostname = 'replit'
+else if(os.hostname().length == 36) hostname = 'heroku'
+else if(os.hostname().length == 8) hostname = 'koyeb'
+else hostname = os.hostname()
+let monspace ='```'
+let monspacenew ='`'
+if(config.ALIVE === "default") {
+ const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + '240p' , description: '240p Quality Video'},
+	    {title: "2", rowId: prefix + '360p' , description: '360p Quality Video'} ,
+        {title: "3", rowId: prefix + '480p' , description: '480p Quality Video'},
+	    {title: "4", rowId: prefix + '720p' , description: '720p Quality Video'} ,
+        {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Video'},
+	    {title: "6", rowId: prefix + '1440p' , description: '1440p Quality Video'} ,
+        {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Video'},
+	    {title: "8", rowId: prefix + 'ytdocv' , description: 'Document type Video'} ,
 
-   *SELECT VIDEO TYPE*`
-const buttons = [
-  {buttonId: prefix + '240p ' + q, buttonText: {displayText: '240p Quality Video'}, type: 1},
-  {buttonId: prefix + '360p ' + q, buttonText: {displayText: '360p Quality Video'}, type: 1},
-  {buttonId: prefix + '480p ' + q, buttonText: {displayText: '480p Quality Video'}, type: 1},
-  {buttonId: prefix + '720p ' + q, buttonText: {displayText: '720p Quality Video'}, type: 1},
-  {buttonId: prefix + '1080p ' + q, buttonText: {displayText: '1080p Quality Video'}, type: 1},
-  {buttonId: prefix + '1440p ' + q, buttonText: {displayText: '1440p Quality Video'}, type: 1},
-  {buttonId: prefix + '2160p ' + q, buttonText: {displayText: '2160p Quality Video'}, type: 1},
-  {buttonId: prefix + 'ytdocv ' + q, buttonText: {displayText: 'Document type Video'}, type: 1}
+	]
+    } 
 ]
-const buttonMessage = {
-    caption: dat,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-if(ytreg(q)){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-*SELECT VIDEO TYPE*`
-const buttons = [
-{buttonId: prefix + '240p ' + q, buttonText: {displayText: '240p Quality Song'}, type: 1},
-{buttonId: prefix + '480p ' + q, buttonText: {displayText: '360p Quality Song'}, type: 1},
-{buttonId: prefix + '360p ' + q, buttonText: {displayText: '480p Quality Song'}, type: 1},
-{buttonId: prefix + '720p ' + q, buttonText: {displayText: '720p Quality Song'}, type: 1},
-{buttonId: prefix + '1080p ' + q, buttonText: {displayText: '1080p Quality Song'}, type: 1},
-{buttonId: prefix + '1440p ' + q, buttonText: {displayText: '1440p Quality Song'}, type: 1},
-{buttonId: prefix + '2160p ' + q, buttonText: {displayText: '2160p Quality Song'}, type: 1},
-{buttonId: prefix + 'ytdocv ' + q, buttonText: {displayText: 'Document type Song'}, type: 1}
-]
-const buttonMessage = {
- caption: dat,
- footer: config.FOOTER,
- buttons: buttons,
- headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-let yts = require("yt-search")
-let search = await yts(q)
-let anu = search.videos[0]
-const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+const listMessage = {
+  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *VIDEO DOWNLOADER*
 
@@ -230,30 +207,72 @@ const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 ⦁
 ╏👽 *Author:* ${anu.author.name}
 ⦁
-╏📡 *Url* : ${anu.url}`
-const buttons = [
-  {buttonId: prefix + '240p ' + anu.url, buttonText: {displayText: '240p Quality Video'}, type: 1},
-  {buttonId: prefix + '480p ' + anu.url, buttonText: {displayText: '360p Quality Video'}, type: 1},
-  {buttonId: prefix + '360p ' + anu.url, buttonText: {displayText: '480p Quality Video'}, type: 1},
-  {buttonId: prefix + '720p ' + anu.url, buttonText: {displayText: '720p Quality Video'}, type: 1},
-  {buttonId: prefix + '1080p ' + anu.url, buttonText: {displayText: '1080p Quality Video'}, type: 1},  
-  {buttonId: prefix + '1440p ' + anu.url, buttonText: {displayText: '1440p Quality Video'}, type: 1},
-  {buttonId: prefix + '2160p ' + anu.url, buttonText: {displayText: '2160p Quality Video'}, type: 1},
-  {buttonId: prefix + 'ytdocv ' + anu.url, buttonText: {displayText: 'Document type Video'}, type: 1}
-]
-const buttonMessage = {
-    image: {url: anu.thumbnail},
-    caption: cap,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
+╏📡 *Url* : ${anu.url}`,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-await conn.buttonMessage(from, buttonMessage, mek)
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+}
+else {
+  const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + '240p' , description: '240p Quality Video'},
+	    {title: "2", rowId: prefix + '360p' , description: '360p Quality Video'} ,
+        {title: "3", rowId: prefix + '480p' , description: '480p Quality Video'},
+	    {title: "4", rowId: prefix + '720p' , description: '720p Quality Video'} ,
+        {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Video'},
+	    {title: "6", rowId: prefix + '1440p' , description: '1440p Quality Video'} ,
+        {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Video'},
+	    {title: "8", rowId: prefix + 'ytdocv' , description: 'Document type Video'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  caption: config.ALIVE,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg })
+}
 } catch (e) {
-  reply(N_FOUND)
-  l(e)
+reply('*Error !!*')
+l(e)
 }
 })
+
+
+
 
 //---------------------------------------------------------------------------
 
