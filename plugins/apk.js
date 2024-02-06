@@ -17,7 +17,7 @@ else imgmsg = "```Please write a few words!```"
 
 cmd({
     pattern: "apk",
-    react: "📦",
+    react: "📱",
     alias: ["findapk","playstore"],
     desc: urlneed,
     category: "download",
@@ -38,30 +38,22 @@ description: '',
 rowId: prefix + 'dapk ' + data[i].id
 });
 }
-const sections = [
-     {
+const sections = [{
 title: "_[Result from playstore.]_",
-rows: [
-	    {title: "1", rowId: prefix + + 'dapk ' + data[i].id , description: 'DOWN APK 📁'},
-	    {title: "2", rowId: prefix + + 'apkdetail' + data[i].id , description: 'APK DETAILS ℹ️'} ,
-
-	]
-  }
-]
+rows: srh
+}]
 const listMessage = {
-text: `*📦📥QUEEN-IZUMI PLAYSTORE DOWNLOADER*
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-*✏️ ʀᴇꜱᴜᴀʟᴛ:* ${q}
-*📚 ᴀᴘᴘ ɴᴀᴍᴇ:* ${data.name}
-*📈 ᴀᴘᴘ ꜱɪᴢᴇ(ᴍʙ):* ${data.size}
+   *APK DOWNLOADER*
 
-_*◯──────────────────────────────────◯*_`,
+*📱 Apk Name:* ${q}`,
 footer: config.FOOTER,
 title: 'Result from playstore. 📲',
-buttonText: '```reply below number you want to get,```',
+buttonText: '*🔢 Reply below number*',
 sections
 }
-return await conn.replyList(from, listMessage,mek)
+await conn.listMessage(from, listMessage,mek)
 } catch (e) {
   reply('*ERROR !!*')
   l(e)
@@ -88,34 +80,6 @@ if (data.size.includes('MB') && data.size.replace(' MB','') > config.MAX_SIZE) r
 let sendapk = await conn.sendMessage(from , { document : { url : data.dllink  } , mimetype : 'application/vnd.android.package-archive' , fileName : data.name + '.' + 'apk',caption: '' } , { quoted: mek })
 await conn.sendMessage(from, { react: { text: '📁', key: sendapk.key }})
 await conn.sendMessage(from, { react: { text: '✔', key: mek.key }})
-} catch (e) {
-    reply('*ERROR !!*')
-  l(e)
-}
-})
-cmd({
-    pattern: "apkdetail",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-await conn.sendMessage(from, { react: { text: '📥', key: mek.key }})
-if(!q) return await conn.sendMessage(from , { text: '*Need apk link...*' }, { quoted: mek } ) 
-const data = await apkdl.download(q)
-let listdata = `*📦🔎QUEEN-IZUMI PLAYSTORE SEARCH*
-
-*✏️ ʀᴇꜱᴜᴀʟᴛ:* ${q}
-*📚 ᴀᴘᴘ ɴᴀᴍᴇ:* ${data.name}
-
-*📈 ᴀᴘᴘ ꜱɪᴢᴇ(ᴍʙ):* ${data.size}
-
-*📱 ʟᴀꜱᴛ ᴜᴘᴅᴀᴛᴇᴅ:* ${data.lastup}
-
-*📦 ᴅᴇᴠᴇʟᴏᴘᴇʀ:* ${data.package}
-
-_*◯──────────────────────────────────◯*_`
-await conn.sendMessage(from, { image: { url: data.icon }, caption: listdata }, { quoted: mek })
 } catch (e) {
     reply('*ERROR !!*')
   l(e)
