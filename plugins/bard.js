@@ -18,7 +18,7 @@ cmd({
     react: '👾',
     desc: desct,
     category: "search",
-    use: '.bard hi',
+    use: '.bard ha',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
