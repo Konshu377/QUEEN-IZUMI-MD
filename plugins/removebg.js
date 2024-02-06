@@ -57,25 +57,43 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
    *🌆 BACKGROUND REMOVER*
 
 `
-const buttons = [
-{buttonId: prefix + 'rbgi ' + namePng + ".png", buttonText: {displayText: 'IMAGE'}, type: 1},
-{buttonId: prefix + 'rebgs ' + namePng + ".png", buttonText: {displayText: 'STICKER'}, type: 1},
-{buttonId: prefix + 'rbgd ' + namePng + ".png", buttonText: {displayText: 'DOCUMENT'}, type: 1}
-]
-    const buttonMessage = {
-        caption: dat,
-        footer: config.FOOTER,
-        buttons: buttons,
-        headerType: 1
-    }
-    return await conn.buttonMessage(from, buttonMessage, mek)
+	 const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'rbgi ' + namePng + ".png", description: 'IMAGE'},
+	    {title: "2", rowId: prefix + 'rebgs ' + namePng + ".png", description: 'STICKER'} ,
+	    {title: "3", rowId: prefix + 'rbgd ' + namePng + ".png", description: 'DOCUMENT'} 
 
-}else return await  reply(imgmsg)
+	]
+    } 
+]
+	const listMessage = {
+ text : dat ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+ 
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
 } catch (e) {
-reply(cant)
+reply(N_FOUND)
 l(e)
 }
 })
+
+
 
 cmd({
   pattern: "rbgi",
