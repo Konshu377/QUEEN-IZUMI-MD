@@ -24,8 +24,6 @@ if(os.hostname().length == 12 ) hostname = 'replit'
 else if(os.hostname().length == 36) hostname = 'heroku'
 else if(os.hostname().length == 8) hostname = 'koyeb'
 else hostname = os.hostname()
-let monspace ='```'
-let monspacenew ='`'
 if(config.ALIVE === "default") {
  const sections = [
     {
