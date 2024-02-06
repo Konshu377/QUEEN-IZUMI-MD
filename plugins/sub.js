@@ -108,7 +108,7 @@ const maru =`*QUEEN-IZUMI-MD SINHALA SUB DOWNLOADER*
 🖇️ _Link_ - ${duka.results[0].link}
 
 `
-  await conn.sendMessage(from,{image:{url: latest.results.img },caption: maru + "*ʀᴏᴡᴅʏ-ʙᴀʙʏ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋᴀʟɪɴᴅᴜ*" },{quoted:mek })
+  await conn.sendMessage(from,{image:{url: latest.results.img },caption: maru + "*Qᴜᴇᴇɴ-ɪᴢᴜᴍɪ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴇᴄʜɴɪᴄᴀʟ ᴄʏʙᴇʀꜱ*" },{quoted:mek })
   await conn.sendMessage(from, { document : { url : latest.results.dl_link  }  ,caption: latest.results.title ,mimetype: 'application/zip', fileName: `${latest.results.title}.zip` }, { quoted: mek })
 } catch (e) {
 reply('🚫 *Error Accurated !!*\n\n' + e )
@@ -132,7 +132,7 @@ const vid = await subsearch(q)
     for (let i of vid.results ) {
         yt += `📃 *${i.no} - ${i.title}*\n🔗 _Link : ${i.link}_ \n\n\n`
     }
- await conn.sendMessage(from,{image:{url: "https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg" },caption: yt + "*ʀᴏᴡᴅʏ-ʙᴀʙʏ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋᴀʟɪɴᴅᴜ*" },{quoted:mek })
+ await conn.sendMessage(from,{image:{url: "https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg" },caption: yt + "*Qᴜᴇᴇɴ-ɪᴢᴜᴍɪ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴇᴄʜɴɪᴄᴀʟ ᴄʏʙᴇʀꜱ*" },{quoted:mek })
 } catch (e) {
 reply('⛔ *Error accurated !!*\n\n' + e )
 l(e)
