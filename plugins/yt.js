@@ -234,14 +234,14 @@ const sections = [
     {
 	title: "",
 	rows: [
-	   {title: "1", rowId: prefix + '240p' , description: '240p Quality Video'},
-	   {title: "2", rowId: prefix + '360p' , description: '360p Quality Video'} ,
-           {title: "3", rowId: prefix + '480p' , description: '480p Quality Video'},
-	   {title: "4", rowId: prefix + '720p' , description: '720p Quality Video'} ,
-           {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Video'},
-	   {title: "6", rowId: prefix + '1440p' , description: '1440p Quality Video'} ,
-           {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Video'},
-	   {title: "8", rowId: prefix + 'ytdocv' , description: 'Document type Video'} ,
+	   {title: "1", rowId: prefix + '240p' + q , description: '240p Quality Video'},
+	   {title: "2", rowId: prefix + '360p' + q , description: '360p Quality Video'} ,
+           {title: "3", rowId: prefix + '480p' + q , description: '480p Quality Video'},
+	   {title: "4", rowId: prefix + '720p' + q , description: '720p Quality Video'} ,
+           {title: "5", rowId: prefix + '1080p' + q , description: '1080p Quality Video'},
+	   {title: "6", rowId: prefix + '1440p' + q , description: '1440p Quality Video'} ,
+           {title: "7", rowId: prefix + '2160p' + q , description: '2160p Quality Video'},
+	   {title: "8", rowId: prefix + 'ytdocv' + q , description: 'Document type Video'} ,
 	]
     } 
 ]
@@ -272,14 +272,14 @@ const sections = [
     {
 	title: "",
 	rows: [
-	   {title: "1", rowId: prefix + '240p' , description: '240p Quality Video'},
-	   {title: "2", rowId: prefix + '360p' , description: '360p Quality Video'} ,
-           {title: "3", rowId: prefix + '480p' , description: '480p Quality Video'},
-	   {title: "4", rowId: prefix + '720p' , description: '720p Quality Video'} ,
-           {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Video'},
-	   {title: "6", rowId: prefix + '1440p' , description: '1440p Quality Video'} ,
-           {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Video'},
-	   {title: "8", rowId: prefix + 'ytdocv' , description: 'Document type Video'} ,
+	   {title: "1", rowId: prefix + '240p' + q , description: '240p Quality Video'},
+	   {title: "2", rowId: prefix + '360p' + q , description: '360p Quality Video'} ,
+           {title: "3", rowId: prefix + '480p' + q , description: '480p Quality Video'},
+	   {title: "4", rowId: prefix + '720p' + q , description: '720p Quality Video'} ,
+           {title: "5", rowId: prefix + '1080p' + q , description: '1080p Quality Video'},
+	   {title: "6", rowId: prefix + '1440p' + q , description: '1440p Quality Video'} ,
+           {title: "7", rowId: prefix + '2160p' + q , description: '2160p Quality Video'},
+	   {title: "8", rowId: prefix + 'ytdocv' + q , description: 'Document type Video'} ,
 
 	]
     } 
@@ -454,9 +454,9 @@ const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'ytdocs ' + q , description: 'Down song document'},
-	    {title: "2", rowId: prefix + 'ytmp3 ' + q , description: 'Down song audio'} ,
-            {title: "3", rowId: prefix + 'ytinfo ' + q , description: 'To see song info'} ,
+	    {title: "1", rowId: prefix + 'ytdocs ' + anu.url , description: 'Down song document'},
+	    {title: "2", rowId: prefix + 'ytmp3 ' + anu.url , description: 'Down song audio'} ,
+            {title: "3", rowId: prefix + 'ytinfo ' + anu.url , description: 'To see song info'} ,
 
 	]
     } 
