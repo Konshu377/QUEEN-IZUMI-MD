@@ -57,34 +57,40 @@ if (!isBotAdmins) return await reply(ADMINim)
 const sections = [{
 title: "Anti Link",
 rows: [{
-title: 'ON 📲',
-rowId: '.antilink on'
+description: 'ON 📲',
+rowId: '.antilink on',
+title : "1"   
 },
 {
-title: 'OFF 📴',
-rowId: '.antilink off'
+description: 'OFF 📴',
+rowId: '.antilink off',
+title : "2"   
 }
 ]},
 {
 title: "Anti Bad Words",
 rows: [{
-title: 'ON 📲',
-rowId: '.antibad on'
+description: 'ON 📲',
+rowId: '.antibad on',
+title : "3"   
 },
 {
-title: 'OFF 📴',
-rowId: '.antibad off'
+description: 'OFF 📴',
+rowId: '.antibad off',
+title : "4"   
 }
 ]},
 {
 title: "Anti Bots",
 rows: [{
-title: 'ON 📲',
-rowId: '.antibot on'
+description: 'ON 📲',
+rowId: '.antibot on',
+title : "5"   
 },
 {
-title: 'OFF 📴',
-rowId: '.antibot off'
+description: 'OFF 📴',
+rowId: '.antibot off',
+title : "6"   
 }
 ]},
 ]
@@ -99,7 +105,7 @@ title: '',
 buttonText: '*🔢 Reply below number*',
 sections
 }
-await conn.listMessage(from, listMessage,mek)
+await conn.replyList(from, listMessage,{ quoted : mek })
 } catch (e) {
 reply('*Error !!*')
 l(e)
