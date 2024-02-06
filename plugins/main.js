@@ -34,7 +34,7 @@ if(config.ALIVE === "default") {
     } 
 ]
 const listMessage = {
-  caption: `${monspace}👋 Hello ${pushname} I'm alive now${monspace}
+  caption: `${monspace}👋 කොහිමද ${pushname} I'm alive now${monspace}
     
 *🚀Version:* ${require("../package.json").version}
 *⌛Memory:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
@@ -160,7 +160,7 @@ if(config.ALIVE === "default") {
     } 
 ]
 const listMessage = {
-  caption: `${monspace}👋 Hello ${pushname} I'm alive now${monspace}
+  caption: `${monspace}👋 ❤කොහොමද ${pushname} I'm alive now${monspace}
     
 *👾 QUEEN-IZUMI-MD commands menu...*
   
