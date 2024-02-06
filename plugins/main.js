@@ -124,6 +124,7 @@ l(e)
 }
 })
 
+
 cmd({
   pattern: "menu",
   react: "👨‍💻",
@@ -132,53 +133,6 @@ cmd({
   category: "main",
   use: '.menu',
   filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-if(os.hostname().length == 12 ) hostname = 'replit'
-else if(os.hostname().length == 36) hostname = 'heroku'
-else if(os.hostname().length == 8) hostname = 'koyeb'
-else hostname = os.hostname()
-let monspace ='```'
-const buttons = [
-{buttonId: prefix + 'downmenu' , buttonText: {displayText: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴍᴀɴᴅꜱ'}, type: 1},
-{buttonId: prefix + 'searchmenu' , buttonText: {displayText: 'ꜱᴇᴀʀᴄʜ ᴄᴏᴍᴍᴀɴᴅꜱ'}, type: 1},
-{buttonId: prefix + 'convertmenu' , buttonText: {displayText: 'ᴄᴏɴᴠᴇʀᴛ ᴄᴏᴍᴍᴀɴᴅꜱ'}, type: 1},
-{buttonId: prefix + 'logomenu' , buttonText: {displayText: 'ʟᴏɢᴏ ᴄᴏᴍᴍᴀɴᴅꜱ'}, type: 1},
-{buttonId: prefix + 'ownermenu' , buttonText: {displayText: 'ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅꜱ'}, type: 1},
-{buttonId: prefix + 'adminmenu' , buttonText: {displayText: 'ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ'}, type: 1},
-{buttonId: prefix + 'othermenu' , buttonText: {displayText: 'ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅꜱ'}, type: 1}
-]
-const buttonMessage = {
-  image: {url: config.LOGO},
-  caption: `${monspace}👋 Hello ${pushname}${monspace}
-
-*👾 QUEEN-IZUMI-MD commands menu...*
-  
- *🚀Version:* ${require("../package.json").version}
- *⌛Memory:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
- *🕒Runtime:* ${runtime(process.uptime())}
- *📍Platform:* ${hostname}`,
-  footer: config.FOOTER,
-  buttons: buttons,
-  headerType: 4
-}
-return await conn.buttonMessage2(from, buttonMessage, mek)
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
-
-
-cmd({
-    pattern: "alive",
-    react: "👨‍💻",
-    alias: ["online","test","bot"],
-    desc: "Check bot online or no.",
-    category: "main",
-    use: '.alive',
-    filename: __filename
 },
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
@@ -196,11 +150,11 @@ if(config.ALIVE === "default") {
 	rows: [
 	    {title: "1", rowId: prefix + 'downmenu' , description: 'COMMANDS MENU'},
 	    {title: "2", rowId: prefix + 'searchmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "2", rowId: prefix + 'convertmenu' , description: 'QUEEN-IZUMI-MD SPEED'}, 
-	    {title: "2", rowId: prefix + 'logomenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "2", rowId: prefix + 'ownermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "2", rowId: prefix + 'adminmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "2", rowId: prefix + 'othermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "3", rowId: prefix + 'convertmenu' , description: 'QUEEN-IZUMI-MD SPEED'}, 
+	    {title: "4", rowId: prefix + 'logomenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "5", rowId: prefix + 'ownermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "6", rowId: prefix + 'adminmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "7", rowId: prefix + 'othermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
 
 	]
     } 
@@ -242,11 +196,11 @@ else {
 	rows: [
 	    {title: "1", rowId: prefix + 'downmenu' , description: 'COMMANDS MENU'},
 	    {title: "2", rowId: prefix + 'searchmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "2", rowId: prefix + 'convertmenu' , description: 'QUEEN-IZUMI-MD SPEED'}, 
-	    {title: "2", rowId: prefix + 'logomenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "2", rowId: prefix + 'ownermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "2", rowId: prefix + 'adminmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "2", rowId: prefix + 'othermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "3", rowId: prefix + 'convertmenu' , description: 'QUEEN-IZUMI-MD SPEED'}, 
+	    {title: "4", rowId: prefix + 'logomenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "5", rowId: prefix + 'ownermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "6", rowId: prefix + 'adminmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "7", rowId: prefix + 'othermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
 
 
 	]
