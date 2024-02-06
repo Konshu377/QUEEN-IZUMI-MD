@@ -111,7 +111,7 @@ if(config.ALIVE === "default") {
     } 
 ]
 const listMessage = {
-  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+  caption: `🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚
 
    *YT DOWNLOADER*
 
@@ -211,18 +211,18 @@ if(config.ALIVE === "default") {
 	rows: [
 	    {title: "1", rowId: prefix + '240p' , description: '240p Quality Song'},
 	    {title: "2", rowId: prefix + '360p' , description: '360p Quality Song'} ,
-        {title: "3", rowId: prefix + '480p' , description: '480p Quality Song'},
+            {title: "3", rowId: prefix + '480p' , description: '480p Quality Song'},
 	    {title: "4", rowId: prefix + '720p' , description: '720p Quality Song'} ,
-        {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Song'},
+            {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Song'},
 	    {title: "6", rowId: prefix + '1440p' , description: '1440p Quality Song'} ,
-        {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Song'},
+            {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Song'},
 	    {title: "8", rowId: prefix + 'ytdocv' , description: 'Document type Song'} ,
 
 	]
     } 
 ]
 const listMessage = {
-  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+  caption: `🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚
 
    *YT DOWNLOADER*
 
@@ -263,11 +263,11 @@ else {
 	rows: [
 	    {title: "1", rowId: prefix + '240p' , description: '240p Quality Song'},
 	    {title: "2", rowId: prefix + '360p' , description: '360p Quality Song'} ,
-        {title: "3", rowId: prefix + '480p' , description: '480p Quality Song'},
+            {title: "3", rowId: prefix + '480p' , description: '480p Quality Song'},
 	    {title: "4", rowId: prefix + '720p' , description: '720p Quality Song'} ,
-        {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Song'},
+            {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Song'},
 	    {title: "6", rowId: prefix + '1440p' , description: '1440p Quality Song'} ,
-        {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Song'},
+            {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Song'},
 	    {title: "8", rowId: prefix + 'ytdocv' , description: 'Document type Song'} ,
 
 	]
@@ -329,13 +329,13 @@ if(config.ALIVE === "default") {
 	rows: [
 	    {title: "1", rowId: prefix + 'ytmp3' , description: 'Audio type Song'},
 	    {title: "2", rowId: prefix + 'ytdocs' , description: 'Document type Song'} ,
-        {title: "3", rowId: prefix + 'ytinfo' , description: 'To see Song info'} ,
+            {title: "3", rowId: prefix + 'ytinfo' , description: 'To see Song info'} ,
 
 	]
     } 
 ]
 const listMessage = {
-  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+  caption: `🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚
 
    *YT DOWNLOADER*
 
@@ -376,7 +376,7 @@ else {
 	rows: [
 	    {title: "1", rowId: prefix + 'ytmp3' , description: 'Audio type Song'},
 	    {title: "2", rowId: prefix + 'ytdocs' , description: 'Document type Song'} ,
-        {title: "3", rowId: prefix + 'ytinfo' , description: 'To see Song info'} ,
+            {title: "3", rowId: prefix + 'ytinfo' , description: 'To see Song info'} ,
 
 	]
     } 
@@ -858,63 +858,4 @@ l(e)
 })
 
 //---------------------------------------------------------------------------
-
-cmd({
-    pattern: "ytinfo",
-    use: '.yt lelena',
-    react: "📽️",
-    desc: descyt,
-    category: "download",
-    filename: __filename
-
-},
-
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-if (!q) return await reply(imgmsg)
-if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
-if(isUrl(q) && q.includes('/shorts')){let dat = `┌───[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-  *SELECT TYPE*`
-const buttons = []
-const buttonMessage = {
-    caption: dat,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-let yts = require("yt-search")
-let search = await yts(q)
-let anu = search.videos[0]
-const cap = `┌───[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-   *YT DOWNLOADER*
-
-╏🎀 *Title:* ${anu.title}
-⦁
-╏🌐 *Duration:* ${anu.timestamp}
-⦁
-╏👀 *Viewers:* ${anu.views}
-⦁
-╏⬆️ *Uploaded:* ${anu.ago}
-⦁
-╏👽 *Author:* ${anu.author.name}
-⦁
-╏📡 *Url* : ${anu.url}`
-    
-const buttons = []
-const buttonMessage = {
-    image: {url: anu.thumbnail},
-    caption: cap,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
-}
-await conn.buttonMessage(from, buttonMessage)
-} catch (e) {
-  reply(N_FOUND)
-  l(e)
-}
-})
 
