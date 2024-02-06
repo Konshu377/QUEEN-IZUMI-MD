@@ -452,7 +452,7 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
          }}	
 }
  
-return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
 } catch (e) {
 reply(N_FOUND)
 l(e)
