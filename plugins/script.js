@@ -92,7 +92,6 @@ else {
     } 
 ]
 const listMessage = {
-  caption: config.ALIVE,
   image : { url : config.LOGO} ,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
