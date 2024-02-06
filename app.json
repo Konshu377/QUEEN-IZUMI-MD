@@ -57,7 +57,7 @@
             "value": ""
         },
         "FOOTER": {
-            "description": "put any text here here",
+            "description": "put any text here",
             "required": true,
             "value": ""
         },
@@ -65,6 +65,11 @@
             "description": "Add the worktype of the Bot ( private , public , only_group )",
             "required": true,
             "value": "private"
+        },
+        "ALIVE": {
+            "description": "put any text here",
+            "required": true,
+            "value": ""
         }
     },
     "buildpacks": [
