@@ -160,7 +160,7 @@ if(config.ALIVE === "default") {
     } 
 ]
 const listMessage = {
-  caption: `${monspace}👋 ❤කොහොමද ${pushname} I'm alive now${monspace}
+  caption: `👋 ❤කොහොමද ${pushname} I'm alive now
     
 *👾 QUEEN-IZUMI-MD commands menu...*
   
