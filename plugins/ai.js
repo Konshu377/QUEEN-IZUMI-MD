@@ -12,7 +12,7 @@ cmd({
     react: '👾',
     desc: "Blackbox ai chat",
     category: "search",
-    use: '.blackbox hi',
+    use: '.blackbox ha',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
