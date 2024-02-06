@@ -89,45 +89,29 @@ cmd({
     desc: descyt,
     category: "download",
     filename: __filename
-
 },
-
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!q) return await reply(imgmsg)
-if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
-if(isUrl(q) && q.includes('/shorts')){let dat = `┌───[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+	var msg = mek
+if(os.hostname().length == 12 ) hostname = 'replit'
+else if(os.hostname().length == 36) hostname = 'heroku'
+else if(os.hostname().length == 8) hostname = 'koyeb'
+else hostname = os.hostname()
+let monspace ='```'
+let monspacenew ='`'
+if(config.ALIVE === "default") {
+ const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'SONG' , description: 'selectaud'},
+	    {title: "2", rowId: prefix + 'VIDEO' , description: 'selectvid'} ,
 
-  *SELECT TYPE*`
-const buttons = [
-  {buttonId: prefix + 'selectaud ' + q, buttonText: {displayText: 'SONG'}, type: 1},
-  {buttonId: prefix + 'selectvid ' + q, buttonText: {displayText: 'VIDEO'}, type: 1}
+	]
+    } 
 ]
-const buttonMessage = {
-    caption: dat,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-if(ytreg(q)){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-*SELECT SONG TYPE*`
-const buttons = [
-{buttonId: prefix + 'ytdocs ' + q, buttonText: {displayText: 'DOCUMENT SONG'}, type: 1},
-{buttonId: prefix + 'ytmp3 ' + q, buttonText: {displayText: 'AUDIO SONG'}, type: 1}
-]
-const buttonMessage = {
- caption: dat,
- footer: config.FOOTER,
- buttons: buttons,
- headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-let yts = require("yt-search")
-let search = await yts(q)
-let anu = search.videos[0]
-const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+const listMessage = {
+  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *YT DOWNLOADER*
 
@@ -141,26 +125,66 @@ const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 ⦁
 ╏👽 *Author:* ${anu.author.name}
 ⦁
-╏📡 *Url* : ${anu.url}`
-const buttons = [
-  {buttonId: prefix + 'selectaud ' + anu.url, buttonText: {displayText: 'SONG'}, type: 1},
-  {buttonId: prefix + 'selectvid ' + anu.url, buttonText: {displayText: 'VIDEO'}, type: 1}
-]
-const buttonMessage = {
-    image: {url: anu.thumbnail},
-    caption: cap,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
+╏📡 *Url* : ${anu.url}`,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-await conn.buttonMessage(from, buttonMessage)
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+}
+else {
+  const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'SONG' , description: 'selectaud'},
+	    {title: "2", rowId: prefix + 'VIDEO' , description: 'selectvid'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  caption: config.ALIVE,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg })
+}
 } catch (e) {
-  reply(N_FOUND)
-  l(e)
+reply('*Error !!*')
+l(e)
 }
 })
 
 //---------------------------------------------------------------------------
+
 
 cmd({
     pattern: "video",
@@ -170,59 +194,37 @@ cmd({
     desc: descv,
     category: "download",
     filename: __filename
-
 },
-
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!q) return await  reply(imgmsg)
-if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
-if(isUrl(q) && q.includes('/shorts')){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+	var msg = mek
+if(os.hostname().length == 12 ) hostname = 'replit'
+else if(os.hostname().length == 36) hostname = 'heroku'
+else if(os.hostname().length == 8) hostname = 'koyeb'
+else hostname = os.hostname()
+let monspace ='```'
+let monspacenew ='`'
+if(config.ALIVE === "default") {
+ const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + '240p' , description: '240p Quality Song'},
+	    {title: "2", rowId: prefix + '360p' , description: '360p Quality Song'} ,
+        {title: "3", rowId: prefix + '480p' , description: '480p Quality Song'},
+	    {title: "4", rowId: prefix + '720p' , description: '720p Quality Song'} ,
+        {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Song'},
+	    {title: "6", rowId: prefix + '1440p' , description: '1440p Quality Song'} ,
+        {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Song'},
+	    {title: "8", rowId: prefix + 'ytdocv' , description: 'Document type Song'} ,
 
-   *SELECT VIDEO TYPE*`
-const buttons = [
-  {buttonId: prefix + '240p ' + q, buttonText: {displayText: '240p Quality Video'}, type: 1},
-  {buttonId: prefix + '360p ' + q, buttonText: {displayText: '360p Quality Video'}, type: 1},
-  {buttonId: prefix + '480p ' + q, buttonText: {displayText: '480p Quality Video'}, type: 1},
-  {buttonId: prefix + '720p ' + q, buttonText: {displayText: '720p Quality Video'}, type: 1},
-  {buttonId: prefix + '1080p ' + q, buttonText: {displayText: '1080p Quality Video'}, type: 1},
-  {buttonId: prefix + '1440p ' + q, buttonText: {displayText: '1440p Quality Video'}, type: 1},
-  {buttonId: prefix + '2160p ' + q, buttonText: {displayText: '2160p Quality Video'}, type: 1},
-  {buttonId: prefix + 'ytdocv ' + q, buttonText: {displayText: 'Document type Video'}, type: 1}
+	]
+    } 
 ]
-const buttonMessage = {
-    caption: dat,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-if(ytreg(q)){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+const listMessage = {
+  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-*SELECT VIDEO TYPE*`
-const buttons = [
-{buttonId: prefix + '240p ' + q, buttonText: {displayText: '240p Quality Song'}, type: 1},
-{buttonId: prefix + '480p ' + q, buttonText: {displayText: '360p Quality Song'}, type: 1},
-{buttonId: prefix + '360p ' + q, buttonText: {displayText: '480p Quality Song'}, type: 1},
-{buttonId: prefix + '720p ' + q, buttonText: {displayText: '720p Quality Song'}, type: 1},
-{buttonId: prefix + '1080p ' + q, buttonText: {displayText: '1080p Quality Song'}, type: 1},
-{buttonId: prefix + '1440p ' + q, buttonText: {displayText: '1440p Quality Song'}, type: 1},
-{buttonId: prefix + '2160p ' + q, buttonText: {displayText: '2160p Quality Song'}, type: 1},
-{buttonId: prefix + 'ytdocv ' + q, buttonText: {displayText: 'Document type Song'}, type: 1}
-]
-const buttonMessage = {
- caption: dat,
- footer: config.FOOTER,
- buttons: buttons,
- headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-let yts = require("yt-search")
-let search = await yts(q)
-let anu = search.videos[0]
-const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-   *VIDEO DOWNLOADER*
+   *YT DOWNLOADER*
 
 ╏🎀 *Title:* ${anu.title}
 ⦁
@@ -234,30 +236,71 @@ const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 ⦁
 ╏👽 *Author:* ${anu.author.name}
 ⦁
-╏📡 *Url* : ${anu.url}`
-const buttons = [
-  {buttonId: prefix + '240p ' + anu.url, buttonText: {displayText: '240p Quality Video'}, type: 1},
-  {buttonId: prefix + '480p ' + anu.url, buttonText: {displayText: '360p Quality Video'}, type: 1},
-  {buttonId: prefix + '360p ' + anu.url, buttonText: {displayText: '480p Quality Video'}, type: 1},
-  {buttonId: prefix + '720p ' + anu.url, buttonText: {displayText: '720p Quality Video'}, type: 1},
-  {buttonId: prefix + '1080p ' + anu.url, buttonText: {displayText: '1080p Quality Video'}, type: 1},  
-  {buttonId: prefix + '1440p ' + anu.url, buttonText: {displayText: '1440p Quality Video'}, type: 1},
-  {buttonId: prefix + '2160p ' + anu.url, buttonText: {displayText: '2160p Quality Video'}, type: 1},
-  {buttonId: prefix + 'ytdocv ' + anu.url, buttonText: {displayText: 'Document type Video'}, type: 1}
-]
-const buttonMessage = {
-    image: {url: anu.thumbnail},
-    caption: cap,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
+╏📡 *Url* : ${anu.url}`,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-await conn.buttonMessage(from, buttonMessage, mek)
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+}
+else {
+  const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + '240p' , description: '240p Quality Song'},
+	    {title: "2", rowId: prefix + '360p' , description: '360p Quality Song'} ,
+        {title: "3", rowId: prefix + '480p' , description: '480p Quality Song'},
+	    {title: "4", rowId: prefix + '720p' , description: '720p Quality Song'} ,
+        {title: "5", rowId: prefix + '1080p' , description: '1080p Quality Song'},
+	    {title: "6", rowId: prefix + '1440p' , description: '1440p Quality Song'} ,
+        {title: "7", rowId: prefix + '2160p' , description: '2160p Quality Song'},
+	    {title: "8", rowId: prefix + 'ytdocv' , description: 'Document type Song'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  caption: config.ALIVE,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg })
+}
 } catch (e) {
-  reply(N_FOUND)
-  l(e)
+reply('*Error !!*')
+l(e)
 }
 })
+
+
 
 //---------------------------------------------------------------------------
 
@@ -270,47 +313,31 @@ cmd({
     category: "download",
     filename: __filename
 },
-
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!q) return await  reply(imgmsg)
-if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
-if(isUrl(q) && q.includes('/shorts')){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+	var msg = mek
+if(os.hostname().length == 12 ) hostname = 'replit'
+else if(os.hostname().length == 36) hostname = 'heroku'
+else if(os.hostname().length == 8) hostname = 'koyeb'
+else hostname = os.hostname()
+let monspace ='```'
+let monspacenew ='`'
+if(config.ALIVE === "default") {
+ const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'ytmp3' , description: 'Audio type Song'},
+	    {title: "2", rowId: prefix + 'ytdocs' , description: 'Document type Song'} ,
+        {title: "3", rowId: prefix + 'ytinfo' , description: 'To see Song info'} ,
 
-   *SELECT SONG TYPE*`
-const buttons = [
-{buttonId: prefix + 'ytdocs ' + q, buttonText: {displayText: 'Document type Song'}, type: 1},
-{buttonId: prefix + 'ytmp3 ' + q, buttonText: {displayText: 'Audio type Song'}, type: 1},
-{buttonId: prefix + 'ytinfo ' + q, buttonText: {displayText: 'To see Song info'}, type: 1}
+	]
+    } 
 ]
-const buttonMessage = {
-    caption: dat,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-if(ytreg(q)){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+const listMessage = {
+  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-*SELECT SONG TYPE*`
-const buttons = [
-{buttonId: prefix + 'ytdocs ' + q, buttonText: {displayText: 'Document type Song'}, type: 1},
-{buttonId: prefix + 'ytmp3 ' + q, buttonText: {displayText: 'Audio type Song'}, type: 1},
-{buttonId: prefix + 'ytinfo ' + q, buttonText: {displayText: 'To see Song info'}, type: 1}
-]
-const buttonMessage = {
- caption: dat,
- footer: config.FOOTER,
- buttons: buttons,
- headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-let yts = require("yt-search")
-let search = await yts(q)
-let anu = search.videos[0]
-const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-   *SONG DOWNLOADER*
+   *YT DOWNLOADER*
 
 ╏🎀 *Title:* ${anu.title}
 ⦁
@@ -322,25 +349,66 @@ const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 ⦁
 ╏👽 *Author:* ${anu.author.name}
 ⦁
-╏📡 *Url* : ${anu.url}`
-const buttons = [
-  {buttonId: prefix + 'ytdocs ' + anu.url, buttonText: {displayText: 'Document type Song'}, type: 1},
-  {buttonId: prefix + 'ytmp3 ' + anu.url, buttonText: {displayText: 'Audio type Song'}, type: 1},
-  {buttonId: prefix + 'ytinfo ' + anu.url, buttonText: {displayText: 'To see Song info'}, type: 1}
-]
-const buttonMessage = {
-    image: {url: anu.thumbnail},
-    caption: cap,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
+╏📡 *Url* : ${anu.url}`,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-await conn.buttonMessage(from, buttonMessage, mek)
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+}
+else {
+  const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'ytmp3' , description: 'Audio type Song'},
+	    {title: "2", rowId: prefix + 'ytdocs' , description: 'Document type Song'} ,
+        {title: "3", rowId: prefix + 'ytinfo' , description: 'To see Song info'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  caption: config.ALIVE,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg })
+}
 } catch (e) {
-  reply(N_FOUND)
-  l(e)
+reply('*Error !!*')
+l(e)
 }
 })
+
+
 
 //---------------------------------------------------------------------------
 
