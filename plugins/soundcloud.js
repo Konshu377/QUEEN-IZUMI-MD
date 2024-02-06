@@ -92,8 +92,10 @@ await conn.listMessage(from, listMessage,mek)
 }
 })
 
+
 cmd({
-  alias: ["selectaud2"],
+  pattern: "selectaud",
+  alias: ["selectaud"],
   filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -101,17 +103,36 @@ try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
   *SELECT SONG TYPE*`
-const buttons = [
-  {buttonId: prefix + 'sounddoc ' + q, buttonText: {displayText: 'DOCUMENT SONG'}, type: 1},
-  {buttonId: prefix + 'soundaud ' + q, buttonText: {displayText: 'AUDIO SONG'}, type: 1}
+
+	 const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", sounddoc: prefix + 'ytdocs ' + q , description: 'Document type Song'},
+	    {title: "2", soundaud: prefix + 'ytmp3 ' + q , description: 'Audio type Song'} , 
+
+	]
+    } 
 ]
-  const buttonMessage = {
-      caption: dat,
-      footer: config.FOOTER,
-      buttons: buttons,
-      headerType: 1
-  }
-return await conn.buttonMessage(from, buttonMessage, mek)
+	const listMessage = {
+ text : dat ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+ 
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
 } catch (e) {
 reply(N_FOUND)
 l(e)
