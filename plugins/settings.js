@@ -127,29 +127,25 @@ if (!isMe) return await reply(BOTOW)
 const sections = [{
 title: "Only Group",
 rows: [{
-description: 'ON 📲',
-rowId: '.onlygroup on',
-title : "1"
+title: 'ON 📲',
+rowId: '.onlygroup on'
 },
 {
-description: 'OFF 📴',
-rowId: '.onlygroup off',
-title: "2"
+title: 'OFF 📴',
+rowId: '.onlygroup off'
 }
 ]},
 {
 title: "Language 🗣️",
 rows: [{
-description: 'English 🇺🇸',
-rowId: '.lang EN',
-title: "3"
+title: 'English 🇺🇸',
+rowId: '.lang EN'
 },
 {
-description: 'Sinhala 🇱🇰',
-rowId: '.lang SI',
-title: "4"
+title: 'Sinhala 🇱🇰',
+rowId: '.lang SI'
 }
-]},
+]}
 ]
 const listMessage = {
 text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
@@ -185,53 +181,45 @@ if(!q) return await reply(tesadtag)
 const sections = [{
 title: "Max Upload Size",
 rows: [{
-description: 'DEFAULT 🎲',
-rowId: '.uploadsz 100',
-title :"1"
+title: 'DEFAULT 🎲',
+rowId: '.uploadsz 100'
 },
 {
-description: 'NEW 🌱',
-rowId: '.uploadsz ' + q,
-title :"2"
+title: 'NEW 🌱',
+rowId: '.uploadsz ' + q
 }
 ]},
 {
 title: "Alive Massage",
 rows: [{
-description: 'DEFAULT 🎲',
-rowId: '.alivemg default',
-title: "3"
+title: 'DEFAULT 🎲',
+rowId: '.alivemg default'
 },
 {
-description: 'NEW 🌱',
-rowId: '.alivemg ' + q,
-title: "4"
+title: 'NEW 🌱',
+rowId: '.alivemg ' + q
 }
 ]},
 {
 title: "Footer Text / Caption",
 rows: [{
-description: 'DEFAULT 🎲',
-rowId: '.footertxt ©ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ',
-title: "5"
+title: 'DEFAULT 🎲',
+rowId: '.footertxt ©ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ'
 },
 {
-description: 'NEW 🌱',
-rowId: '.footertxt ' + q,
-title: "6"
+title: 'NEW 🌱',
+rowId: '.footertxt ' + q
 }
 ]},
 {
 title: "Logo",
 rows: [{
-description: 'DEFAULT 🎲',
-rowId: '.setlogo https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg',
-title' "7"
+title: 'DEFAULT 🎲',
+rowId: '.setlogo https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg'
 },
 {
-description: 'NEW 🌱',
-rowId: '.setlogo ' + q,
-title: "8"
+title: 'NEW 🌱',
+rowId: '.setlogo ' + q
 }
 ]},
 ]
