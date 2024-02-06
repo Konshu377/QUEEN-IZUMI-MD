@@ -29,7 +29,6 @@ if(config.LANG === 'SI') errt = "*මට කිසිවක් සොයාග�
 else errt = "*I couldn't find anything :(*"
 
 
-
 cmd({
     pattern: "img",
     react: '🖼️',
@@ -42,25 +41,45 @@ async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGr
 try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-  *Select img list no*`
-const buttons = [
-  {buttonId: prefix + 'img1 ' + q, buttonText: {displayText: 'Image list 1'}, type: 1},
-  {buttonId: prefix + 'img2 ' + q, buttonText: {displayText: 'Image list 2'}, type: 1},
-  {buttonId: prefix + 'img3 ' + q, buttonText: {displayText: 'Image list 3'}, type: 1},
-  {buttonId: prefix + 'img4 ' + q, buttonText: {displayText: 'Image list 4'}, type: 1}
+  *SELECT SONG TYPE*`
+
+	 const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'img1 ' + q , description: 'Image list 1'},
+	    {title: "2", rowId: prefix + 'img2 ' + q , description: 'Image list 2'} ,
+	    {title: "3", rowId: prefix + 'img3 ' + q , description: 'Image list 3'},
+        {title: "3", rowId: prefix + 'img4 ' + q , description: 'Image list 4'} , 
+
+	]
+    } 
 ]
-  const buttonMessage = {
-      caption: dat,
-      footer: config.FOOTER,
-      buttons: buttons,
-      headerType: 1
-  }
-return await conn.buttonMessage(from, buttonMessage, mek)
+	const listMessage = {
+ text : dat ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+ 
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
 } catch (e) {
 reply(N_FOUND)
 l(e)
 }
 })
+
 
 cmd({
     pattern: "img1",
