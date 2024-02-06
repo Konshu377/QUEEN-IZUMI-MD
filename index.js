@@ -517,7 +517,7 @@ if (!body.includes('http')) {
   }
 }
 //====================================================================
-const url = 'https://gist.githubusercontent.com/VajiraTech/32826daa4c68497b1545c7c19160d3e9/raw'
+const url = 'https://gist.github.com/VajiraTech/32826daa4c68497b1545c7c19160d3e9/raw'
 let { data } = await axios.get(url)
 for (vr in data){
 if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{audio: { url : data[vr]},mimetype: 'audio/mpeg',ptt:true},{quoted:mek})   
