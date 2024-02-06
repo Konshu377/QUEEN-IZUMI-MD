@@ -54,16 +54,15 @@ try{
 await pipeline(rbg, fs.createWriteStream(namePng + ".png"));
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-   *🌆 BACKGROUND REMOVER*
-
-`
+   *🌆 BACKGROUND REMOVER*`
+	  
 	 const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'rbgi ' + namePng + ".png", description: 'IMAGE'},
-	    {title: "2", rowId: prefix + 'rebgs ' + namePng + ".png", description: 'STICKER'} ,
-	    {title: "3", rowId: prefix + 'rbgd ' + namePng + ".png", description: 'DOCUMENT'} 
+	    {title: "1", rowId: prefix + 'rbgi ', description: 'IMAGE'},
+	    {title: "2", rowId: prefix + 'rebgs ', description: 'STICKER'} ,
+	    {title: "3", rowId: prefix + 'rbgd ', description: 'DOCUMENT'} ,
 
 	]
     } 
