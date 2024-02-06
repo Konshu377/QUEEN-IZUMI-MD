@@ -8,6 +8,7 @@ if(config.LANG === 'SI') tmsg = 'එය Bot link ලබා දෙයි.'
 else tmsg = "It gives bot link."
 
 
+
 cmd({
     pattern: "sc",
     react: "👨‍💻",
@@ -19,6 +20,7 @@ cmd({
 },
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
+	var msg = mek
 if(os.hostname().length == 12 ) hostname = 'replit'
 else if(os.hostname().length == 36) hostname = 'heroku'
 else if(os.hostname().length == 8) hostname = 'koyeb'
@@ -26,13 +28,18 @@ else hostname = os.hostname()
 let monspace ='```'
 let monspacenew ='`'
 if(config.ALIVE === "default") {
-const buttons = [
-  {buttonId: prefix + 'menu' , buttonText: {displayText: 'COMMANDS MENU'}, type: 1},
-  {buttonId: prefix + 'ping' , buttonText: {displayText: 'QUEEN-IZUMI-MD SPEED'}, type: 1}
+ const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'menu' , description: 'COMMANDS MENU'},
+	    {title: "2", rowId: prefix + 'ping' , description: 'QUEEN-IZUMI-MD SPEED'},
+
+	]
+    } 
 ]
-const buttonMessage = {
-    image: {url: config.LOGO},
-    caption: `*QUEEN IZUMI WHATSAPP USER BOT* 💫
+const listMessage = {
+  caption: `*QUEEN IZUMI WHATSAPP USER BOT* 💫
 
                      *OUR MISSION*
 
@@ -57,24 +64,57 @@ const buttonMessage = {
 *ᴘʟᴇᴀꜱᴇ ꜱᴛᴀʀ ᴛʜᴇ ʀᴇᴘᴏ ᴀɴᴅ ꜰᴏʟʟᴏᴡ ᴍᴇ ᴏɴ ɢɪᴛʜᴜʙ* 
 
 *C O M I N G  S O O N*`,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/85fe740b2385a55178500.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-return await conn.buttonMessage2(from, buttonMessage)}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+}
 else {
-  const buttons = [
-    {buttonId: prefix + 'menu' , buttonText: {displayText: 'COMMANDS MENU'}, type: 1},
-    {buttonId: prefix + 'ping' , buttonText: {displayText: 'BOT\'S SPEED'}, type: 1}
-  ]
-  const buttonMessage = {
-      image: {url: config.LOGO},
-      caption: config.ALIVE,
-      footer: config.FOOTER,
-      buttons: buttons,
-      headerType: 4
-  }
-  return await conn.buttonMessage2(from, buttonMessage, mek)}
+  const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'menu' , description: 'COMMANDS MENU'},
+	    {title: "2", rowId: prefix + 'ping' , description: 'QUEEN-IZUMI-MD SPEED'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  caption: config.ALIVE,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg })
+}
 } catch (e) {
 reply('*Error !!*')
 l(e)
