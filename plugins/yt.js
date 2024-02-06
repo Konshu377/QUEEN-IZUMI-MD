@@ -1,6 +1,11 @@
 const config = require('../config')
 const { cmd, commands } = require('../command')
 var os = require('os')
+const dl = require('@bochilteam/scraper')  
+const ytdl = require('youtubedl-core');
+const api = require("caliph-api");
+const fs = require('fs-extra')
+var videotime = 60000 // 1000 min
 function ytreg(url) {
     const ytIdRegex = /(?:http(?:s|):\/\/|)(?:(?:www\.|)youtube(?:\-nocookie|)\.com\/(?:watch\?.*(?:|\&)v=|embed|shorts\/|v\/)|youtu\.be\/)([-_0-9A-Za-z]{11})/
     return ytIdRegex.test(url);
