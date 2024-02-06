@@ -51,7 +51,7 @@ const listMessage = {
   contextInfo: {
 				
 				externalAdReply: { 
-					title: '🥽 𝗔𝗤𝗨𝗔𝗕𝗢𝗧 𝗠𝗗 V2💦',
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
 					mediaType: 1,
 					sourceUrl: "" ,
@@ -83,7 +83,7 @@ const listMessage = {
   contextInfo: {
 				
 				externalAdReply: { 
-					title: '🥽 𝗔𝗤𝗨𝗔𝗕𝗢𝗧 𝗠𝗗 V2💦',
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
 					mediaType: 1,
 					sourceUrl: "" ,
@@ -162,14 +162,12 @@ if(config.ALIVE === "default") {
 const listMessage = {
   caption: `${monspace}👋 Hello ${pushname} I'm alive now${monspace}
     
-*🚀Version:* ${require("../package.json").version}
-*⌛Memory:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-*🕒Runtime:* ${runtime(process.uptime())}
-*📍Platform:* ${hostname}
-
-🐼This is the result of our teams hard work and our technical cybers team owns the bots rights and code rights. Therefore, you have no chance to change and submit our bot under any circumstances And 100 Commands And logo, thumbnail,banner Maker Commands Ai Chatbot feathers On Our Bot
-                    
-*🌻Have A Nice Day..*🌻`,
+*👾 QUEEN-IZUMI-MD commands menu...*
+  
+ *🚀Version:* ${require("../package.json").version}
+ *⌛Memory:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+ *🕒Runtime:* ${runtime(process.uptime())}
+ *📍Platform:* ${hostname}`,
   image : { url : config.LOGO} ,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
@@ -177,7 +175,7 @@ const listMessage = {
   contextInfo: {
 				
 				externalAdReply: { 
-					title: '🥽 𝗔𝗤𝗨𝗔𝗕𝗢𝗧 𝗠𝗗 V2💦',
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
 					mediaType: 1,
 					sourceUrl: "" ,
@@ -210,12 +208,12 @@ const listMessage = {
   caption: config.ALIVE,
   image : { url : config.LOGO} ,
   footer: config.FOOTER,
-  buttonText: "🔢 Reply below number,",
+  buttonText: "🔢 Reply you select number,",
   sections,
   contextInfo: {
 				
 				externalAdReply: { 
-					title: '🥽 𝗔𝗤𝗨𝗔𝗕𝗢𝗧 𝗠𝗗 V2💦',
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
 					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
 					mediaType: 1,
 					sourceUrl: "" ,
