@@ -15,28 +15,29 @@ cmd({
     category: "main",
     use: '.alive',
     filename: __filename
-
 },
-
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!q) return await reply(imgmsg)
-if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
-if(isUrl(q) && q.includes('/shorts')){let dat = `┌───[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+	var msg = mek
+if(os.hostname().length == 12 ) hostname = 'replit'
+else if(os.hostname().length == 36) hostname = 'heroku'
+else if(os.hostname().length == 8) hostname = 'koyeb'
+else hostname = os.hostname()
+let monspace ='```'
+let monspacenew ='`'
+if(config.ALIVE === "default") {
+ const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'menu' , description: 'COMMANDS MENU'},
+	    {title: "2", rowId: prefix + 'ping' , description: 'QUEEN-IZUMI-MD SPEED'},
 
-  *SELECT TYPE*`
-const buttons = []
-const buttonMessage = {
-    caption: dat,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 1
-}
-return await conn.buttonMessage(from, buttonMessage, mek)}
-let yts = require("yt-search")
-let search = await yts(q)
-let anu = search.videos[0]
-const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+	]
+    } 
+]
+const listMessage = {
+  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *QUEEN IZUMI WHATSAPP USER BOT* 💫
 
@@ -62,19 +63,61 @@ const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
 *ᴘʟᴇᴀꜱᴇ ꜱᴛᴀʀ ᴛʜᴇ ʀᴇᴘᴏ ᴀɴᴅ ꜰᴏʟʟᴏᴡ ᴍᴇ ᴏɴ ɢɪᴛʜᴜʙ* 
 
-*C O M I N G  S O O N*`
-    
-const buttons = []
-const buttonMessage = {
-    image: {url: anu.thumbnail},
-    caption: cap,
-    footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
+*C O M I N G  S O O N*`,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-await conn.buttonMessage(from, buttonMessage)
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+}
+else {
+  const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'menu' , description: 'COMMANDS MENU'},
+	    {title: "2", rowId: prefix + 'ping' , description: 'QUEEN-IZUMI-MD SPEED'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  caption: config.ALIVE,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg })
+}
 } catch (e) {
-  reply(N_FOUND)
-  l(e)
+reply('*Error !!*')
+l(e)
 }
 })
+
