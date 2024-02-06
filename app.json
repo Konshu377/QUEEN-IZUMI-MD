@@ -65,11 +65,6 @@
             "description": "Add the worktype of the Bot ( private , public , only_group )",
             "required": true,
             "value": "private"
-        },
-        "ALIVE": {
-            "description": "put any text here or to elier message put default",
-            "required": true,
-            "value": ""
         }
     },
     "buildpacks": [
