@@ -26,10 +26,40 @@
             "required": true,
             "value": ""
         },
-        "DATABASE_URL": {
-            "description": "put postgrestql url here",
+        "MAX_SIZE": {
+            "description": "put download size here",
             "required": true,
-            "value": "postgres://izumimd_meje_user:0Vhm5vKGZ7ORt2FlJBQf4d6EtRdeuE8z@dpg-cn0o2imn7f5s73fa46q0-a.frankfurt-postgres.render.com/izumimd_meje"
+            "value": "100"
+        },
+        "LOGO": {
+            "description": "put url here",
+            "required": true,
+            "value": ""
+        },
+        "LANG": {
+            "description": "put SI/EN here",
+            "required": true,
+            "value": ""
+        },
+        "ANTI_BOT": {
+            "description": "put true or false here",
+            "required": true,
+            "value": ""
+        },
+        "ANTI_LINK": {
+            "description": "put true or false here",
+            "required": true,
+            "value": ""
+        },
+        "ANTI_BAD": {
+            "description": "put true or false here",
+            "required": true,
+            "value": ""
+        },
+        "FOOTER": {
+            "description": "put any text here here",
+            "required": true,
+            "value": ""
         },
         "ONLY_GROUP": {
             "description": "Add the worktype of the Bot ( private , public , only_group )",
