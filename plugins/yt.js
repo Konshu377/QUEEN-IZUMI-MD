@@ -435,7 +435,7 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
     } 
 ]
 	const listMessage = {
- text : data ,
+ text : dat ,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
   sections,
