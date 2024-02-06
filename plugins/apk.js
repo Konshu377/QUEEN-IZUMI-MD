@@ -43,7 +43,7 @@ title: "_[Result from playstore.]_",
 rows: srh
 }]
 const listMessage = {
-text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+text: `┌───[🍭Zero-Two🍭]
 
    *APK DOWNLOADER*
 
@@ -53,7 +53,7 @@ title: 'Result from playstore. 📲',
 buttonText: '*🔢 Reply below number*',
 sections
 }
-return await conn.replyList(from, listMessage ,{ quoted : msg })
+await conn.listMessage(from, listMessage,mek)
 } catch (e) {
   reply('*ERROR !!*')
   l(e)
