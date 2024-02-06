@@ -176,8 +176,8 @@ const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'selectaud ' + q , description: 'SONG'},
-	    {title: "2", rowId: prefix + 'selectvid ' + q , description: 'VIDEO'} ,
+	    {title: "1", rowId: prefix + 'selectaud ' + anu.url , description: 'SONG'},
+	    {title: "2", rowId: prefix + 'selectvid ' + anu.url , description: 'VIDEO'} ,
 
 	]
     } 
