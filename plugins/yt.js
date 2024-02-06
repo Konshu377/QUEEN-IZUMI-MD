@@ -128,7 +128,7 @@ const listMessage = {
          }}	
 }
 
-return await conn.listMessage(from, listMessage, mek)}				      
+return await conn.replyList(from, listMessage ,{ quoted : mek })				      
 }
 if(ytreg(q)){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
@@ -150,7 +150,7 @@ const listMessage = {
   sections }	
 
 	     
-return await conn.listMessage(from, listMessage, mek)}
+return await conn.replyList(from, listMessage ,{ quoted : mek })
 
 }
 let yts = require("yt-search")
@@ -201,7 +201,7 @@ const listMessage = {
          }}	
 }
 
-await conn.listMessage(from, listMessage)
+await conn.replyList(from, listMessage ,{ quoted : mek }) 
 
 } catch (e) {
   reply(N_FOUND)
@@ -530,7 +530,7 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
          }}	
 }
  
-return await conn.listMessage(from, listMessage, mek) 
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
 } catch (e) {
 reply(N_FOUND)
 l(e)
