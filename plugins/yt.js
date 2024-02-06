@@ -201,7 +201,7 @@ const listMessage = {
          }}	
 }
 
-return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+await conn.replyList(from, listMessage ,{ quoted : mek }) 
 
 } catch (e) {
   reply(N_FOUND)
@@ -347,7 +347,7 @@ const listMessage = {
          }}	
 }
 
-return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+await conn.replyList(from, listMessage ,{ quoted : mek }) 
 
 } catch (e) {
   reply(N_FOUND)
@@ -480,7 +480,7 @@ const listMessage = {
          }}	
 }
 
-return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+await conn.replyList(from, listMessage ,{ quoted : mek }) 
 
 } catch (e) {
   reply(N_FOUND)
