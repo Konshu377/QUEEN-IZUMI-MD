@@ -42,22 +42,22 @@
             "value": ""
         },
         "ANTI_BOT": {
-            "description": "put true or false here",
+            "description": "put on or off here",
             "required": true,
             "value": ""
         },
         "ANTI_LINK": {
-            "description": "put true or false here",
+            "description": "put on or off here",
             "required": true,
             "value": ""
         },
         "ANTI_BAD": {
-            "description": "put true or false here",
+            "description": "put on or off here",
             "required": true,
             "value": ""
         },
         "FOOTER": {
-            "description": "put any text here",
+            "description": "put any text or put default to elier footer here",
             "required": true,
             "value": ""
         },
@@ -67,7 +67,7 @@
             "value": "private"
         },
         "ALIVE": {
-            "description": "put any text here",
+            "description": "put any text here or to elier message put default",
             "required": true,
             "value": ""
         }
