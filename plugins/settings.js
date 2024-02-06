@@ -138,7 +138,7 @@ title : "2"
 }
 ]},
 {
-title: "Anti Bots",
+title: "Language",
 rows: [{
 description: 'English 🇺🇸',
 rowId: '.lang EN',
