@@ -18,7 +18,7 @@ cmd({
     react: '👾',
     desc: desct,
     category: "search",
-    use: '.chatgpt hi',
+    use: '.chatgpt ha',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -48,7 +48,7 @@ cmd({
     react: '👾',
     desc: desct,
     category: "search",
-    use: '.chatgpt4 hi',
+    use: '.chatgpt4 ha',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
