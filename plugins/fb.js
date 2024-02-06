@@ -102,22 +102,42 @@ if(!l[0]) return await reply(N_FOUND)
 var buttons
 if(!l[1]){
 var buttons = [
-  {buttonId: prefix + 'dvideo ' + l[0].url, buttonText: {displayText: l[0].quality + ' VIDEO'}, type: 1}
+	{
+	title: "",
+	rows: [
+  {title: "1", rowId: prefix + 'dvideo ' + l[0].url, description: 1[0].quality +'Video'},
+  ]
+  }
 ]
 } else {
 var buttons = [
-  {buttonId: prefix + 'dvideo ' + l[0].url, buttonText: {displayText: l[0].quality + ' VIDEO'}, type: 1},
-  {buttonId: prefix + 'dvideo ' + l[1].url, buttonText: {displayText: l[1].quality + ' VIDEO'}, type: 1}
+	{
+	title: "",
+	rows: [
+  {title: "1", rowId: prefix + 'dvideo ' + l[0].url, description: 1[0].quality +'Video'},
+  {title: "2", rowId: prefix + 'dvideo ' + l[1].url, description: 1[1].quality +'Video'},
+  ]
+  }
 ]
-}
-const buttonMessage = {
+const listMessage = {
+    caption: config.ALIVE,
     image: {url: 'https://media.idownloadblog.com/wp-content/uploads/2022/04/Download-Facebook-data.jpg'},
-    caption: dat,
     footer: config.FOOTER,
-    buttons: buttons,
-    headerType: 4
+    buttonText: "🔢 Reply below number,",
+    sections,
+            contextInfo: {
+				
+				externalAdReply: { 
+					title: '🥽 𝗔𝗤𝗨𝗔𝗕𝗢𝗧 𝗠𝗗 V2💦',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/85fe740b2385a55178500.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
 }
-return await conn.buttonMessage(from, buttonMessage,mek)
+return await conn.replyList(from, listMessage ,{ quoted : msg })
 } catch (e) {
 l(e)
 await reply(N_FOUND)
