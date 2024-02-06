@@ -149,7 +149,7 @@ description: 'Sinhala 🇱🇰',
 rowId: '.lang SI',
 title: "4"
 }
-]}
+]},
 ]
 const listMessage = {
 text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
