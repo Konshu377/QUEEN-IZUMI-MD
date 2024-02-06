@@ -26,6 +26,11 @@
             "required": true,
             "value": ""
         },
+        "DATABASE_URL": {
+            "description": "put postgrestql url here",
+            "required": true,
+            "value": "postgres://izumimd_meje_user:0Vhm5vKGZ7ORt2FlJBQf4d6EtRdeuE8z@dpg-cn0o2imn7f5s73fa46q0-a.frankfurt-postgres.render.com/izumimd_meje"
+        },
         "ONLY_GROUP": {
             "description": "Add the worktype of the Bot ( private , public , only_group )",
             "required": true,
