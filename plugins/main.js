@@ -148,13 +148,13 @@ if(config.ALIVE === "default") {
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'downmenu' , description: 'COMMANDS MENU'},
-	    {title: "2", rowId: prefix + 'searchmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "3", rowId: prefix + 'convertmenu' , description: 'QUEEN-IZUMI-MD SPEED'}, 
-	    {title: "4", rowId: prefix + 'logomenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "5", rowId: prefix + 'ownermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "6", rowId: prefix + 'adminmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "7", rowId: prefix + 'othermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "1", rowId: prefix + 'downmenu' , description: 'Down Commands'},
+	    {title: "2", rowId: prefix + 'searchmenu' , description: 'Search Commands'},
+	    {title: "3", rowId: prefix + 'convertmenu' , description: 'Convert Commands'}, 
+	    {title: "4", rowId: prefix + 'logomenu' , description: 'Logo Commands'},
+	    {title: "5", rowId: prefix + 'ownermenu' , description: 'Owner Commands'},
+	    {title: "6", rowId: prefix + 'adminmenu' , description: 'Admin Commands'},
+	    {title: "7", rowId: prefix + 'othermenu' , description: 'Other commands'},
 
 	]
     } 
@@ -194,13 +194,13 @@ else {
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'downmenu' , description: 'COMMANDS MENU'},
-	    {title: "2", rowId: prefix + 'searchmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "3", rowId: prefix + 'convertmenu' , description: 'QUEEN-IZUMI-MD SPEED'}, 
-	    {title: "4", rowId: prefix + 'logomenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "5", rowId: prefix + 'ownermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "6", rowId: prefix + 'adminmenu' , description: 'QUEEN-IZUMI-MD SPEED'},
-	    {title: "7", rowId: prefix + 'othermenu' , description: 'QUEEN-IZUMI-MD SPEED'},
+	    {title: "1", rowId: prefix + 'downmenu' , description: 'Down Commands'},
+	    {title: "2", rowId: prefix + 'searchmenu' , description: 'Search Commands'},
+	    {title: "3", rowId: prefix + 'convertmenu' , description: 'Convert Commands'}, 
+	    {title: "4", rowId: prefix + 'logomenu' , description: 'Logo Commands'},
+	    {title: "5", rowId: prefix + 'ownermenu' , description: 'Owner Commands'},
+	    {title: "6", rowId: prefix + 'adminmenu' , description: 'Admin Commands'},
+	    {title: "7", rowId: prefix + 'othermenu' , description: 'Other commands'},
 
 
 	]
