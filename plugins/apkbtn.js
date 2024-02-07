@@ -59,8 +59,6 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 ]
 	const listMessage = {
   text : dat ,
-  image: 'https://youtu.be/r23D83z3rhg?si=0JP9iicwWo8tT-Tn',
-  caption: cap,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
   sections,
