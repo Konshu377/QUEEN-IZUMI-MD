@@ -133,7 +133,7 @@ const sections = [
     } 
 ]
 const listMessage = {
-  image: {url: data.icom},
+  image: {url: anu.thumbnail},
   caption: cap,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
