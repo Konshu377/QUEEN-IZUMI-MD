@@ -83,10 +83,8 @@ const listMessage = {
 				
 				externalAdReply: { 
 					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
-					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
 					mediaType: 1,
 					sourceUrl: "" ,
-					thumbnailUrl: 'https://telegra.ph/file/9a5c289f00b21338efe9f.jpg',
 					renderLargerThumbnail: false,
           showAdAttribution: true
          }}	
@@ -143,11 +141,9 @@ const listMessage = {
   contextInfo: {
 				
 				externalAdReply: { 
-					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
-					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',					
 					mediaType: 1,
-					sourceUrl: "" ,
-					thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					sourceUrl: "" ,				
 					renderLargerThumbnail: false,
           showAdAttribution: true
          }}	
