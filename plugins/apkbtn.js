@@ -86,7 +86,6 @@ const listMessage = {
 					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
 					mediaType: 1,
 					sourceUrl: "" ,
-          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 					renderLargerThumbnail: false,
           showAdAttribution: true
          }}	
@@ -133,7 +132,6 @@ const sections = [
     } 
 ]
 const listMessage = {
-  image: {url: anu.thumbnail},
   caption: cap,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
@@ -145,7 +143,6 @@ const listMessage = {
 					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
 					mediaType: 1,
 					sourceUrl: "" ,
-          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
 					renderLargerThumbnail: false,
           showAdAttribution: true
          }}	
