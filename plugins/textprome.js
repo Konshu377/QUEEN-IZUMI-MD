@@ -25,12 +25,11 @@ if(config.LANG === 'SI') errt = "*මට මෙම ලාංඡනය නිර�
 else errt = "*I cant create this logo :(*"
 
 cmd({
-    pattern: "textpro1",
+    pattern: "logo",
     react: '🎡',
-    alias: ["logo","textpro"],
     desc: desc,
     category: "logo",
-    use: '.textpro1 vihanga yt',
+    use: '.textpro1 vajira yt',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -43,7 +42,8 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(!data[i].double_text && !data[i].need_image){
 srh.push({
-title: data[i].title,
+description: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo ' + q + '+' + data[i].url
 });
 }
@@ -72,12 +72,11 @@ l(e)
 })
 
 cmd({
-    pattern: "textpro2",
+    pattern: "banner",
     react: '🎡',
-    alias: ["logo2"],
     desc: desc2,
     category: "logo",
-    use: '.textpro2 vihanga+ashinshana',
+    use: '.textpro2 vajira+rathnayaka',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -90,7 +89,8 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].double_text && !data[i].need_image){
 srh.push({
-title: data[i].title,
+description: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo2 ' + q + '+' + data[i].url
 });
 }
