@@ -120,7 +120,11 @@ return await conn.replyList(from, listMessage ,{ quoted : mek })
 let yts = require("yt-search")
 let search = await yts(q)
 let anu = search.videos[0]
-const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]`
+const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+
+*📚 Name :* ${data.name}
+├──────────────────        
+*📥 Size :* ${data.size}`
 
 const sections = [
     {
