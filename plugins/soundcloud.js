@@ -46,9 +46,8 @@ if(config.LANG === 'SI') imgmsg = "```කරුණාකර වචන කිහ�
 else imgmsg = "```Please write a few words!```"
 
 cmd({
-    pattern: "soundcloud",
+    pattern: "play",
     react: "📱",
-    alias: ["song2","scdl"],
     desc: urlneed,
     category: "download",
     use: '.soundcloud lelena',
