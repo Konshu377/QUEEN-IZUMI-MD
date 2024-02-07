@@ -56,7 +56,7 @@ let dat = `┌───[🍭Zero-Two🍭]
 
    *🌆 BACKGROUND REMOVER*
 
-`
+`,
 const sections = [
     {
 	title: "",
