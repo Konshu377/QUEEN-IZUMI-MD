@@ -1,4 +1,4 @@
-nconst config = require('../config')
+const config = require('../config')
 const { cmd, commands } = require('../command')
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
 const gis = require('async-g-i-s');
@@ -144,7 +144,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
-title: i + 1,
+title: 'Image number: ' + nombor++ ,
 rowId: prefix + 'dimg ' + data.result[i]
 });
 }
@@ -189,8 +189,8 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.results.length; i++) {
 srh.push({
+title: data.results[i].title ,
 description: data.results[i].description ,
-title: i + 1,
 rowId: prefix + 'dimg ' + data.results[i].direct
 });
 }
@@ -209,7 +209,7 @@ title: 'Result from bing 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
@@ -235,8 +235,8 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.length; i++) {
 srh.push({
+title: 'Image number: ' + nombor++ ,
 description: data[i].width+'x'+data[i].height,
-title: i + 1,
 rowId: prefix + 'dimg ' + data[i].url
 });
 }
@@ -255,7 +255,7 @@ title: 'Result from google. 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
