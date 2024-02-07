@@ -126,14 +126,14 @@ const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1 ' + anu.url , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
-            {title: "3", rowId: prefix + 'apkinfo ' + anu.url , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
+	    {title: "1", rowId: prefix + 'apk1 ' + data.url , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
+            {title: "3", rowId: prefix + 'apkinfo ' + data.url , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
 
 	]
     } 
 ]
 const listMessage = {
-  image: {url: anu.thumbnail},
+  image: {url: data.icon},
   caption: cap,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
