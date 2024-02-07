@@ -69,8 +69,8 @@ const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
-            {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
+	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ 📥'},
+            {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ 📃'} ,
 	]
     } 
 ]
@@ -101,8 +101,8 @@ const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
-            {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
+	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ 📥'},
+            {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ 📃'} ,
 
 	]
     } 
@@ -122,16 +122,14 @@ let search = await yts(q)
 let anu = search.videos[0]
 const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-*📚 Name :* ${data.name}
-├──────────────────        
-*📥 Size :* ${data.size}`
+Qᴜᴇᴇɴ ɪᴢᴜᴍɪ ᴀᴘᴋ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ`
 
 const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1 ' + anu.url , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
-            {title: "3", rowId: prefix + 'apkinfo ' + anu.url , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
+	    {title: "1", rowId: prefix + 'apk1 ' + anu.url , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ 📥'},
+            {title: "3", rowId: prefix + 'apkinfo ' + anu.url , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ 📃'} ,
 
 	]
     } 
