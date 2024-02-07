@@ -30,8 +30,8 @@ else errt = "*I couldn't find anything :(*"
 
 
 cmd({
-    pattern: "img",
-    react: '🖼️',
+    pattern: "apk",
+    react: '📥',
     desc: desc2,
     category: "download",
     use: '.img2 car',
@@ -40,16 +40,19 @@ cmd({
 async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+├──────────────────        
 
-  *SELECT SONG TYPE*`
+  *𝗤𝗨𝗘𝗘𝗡 𝗜𝗭𝗨𝗠𝗜 𝗔𝗣𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥*
+	
+├──────────────────`   
 
 	 const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴀᴘᴋ'},
-	    {title: "2", rowId: prefix + 'dapk ' + q , description: 'ꜱɪᴍɪʟᴇʀ ᴛᴏ ᴛʜᴀᴛ ᴀᴘᴋ'} ,
-	    {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ᴀᴘᴋ ɪɴꜰᴏᴍᴀᴛɪᴏɴ'},
+	    {title: "1", rowId: prefix + 'dapk ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴀᴘᴋ 📥'},
+	    {title: "2", rowId: prefix + 'apk1 ' + q , description: 'ꜱɪᴍɪʟᴇʀ ᴛᴏ ᴛʜᴀᴛ ᴀᴘᴋ 📦'} ,
+	    {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ᴀᴘᴋ ɪɴꜰᴏᴍᴀᴛɪᴏɴ 📃'},
         
 	]
     } 
