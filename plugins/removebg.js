@@ -57,18 +57,23 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
    *🌆 BACKGROUND REMOVER*
 
 `
-const buttons = [
-{buttonId: prefix + 'rbgi ' + namePng + ".png", buttonText: {displayText: 'IMAGE'}, type: 1},
-{buttonId: prefix + 'rebgs ' + namePng + ".png", buttonText: {displayText: 'STICKER'}, type: 1},
-{buttonId: prefix + 'rbgd ' + namePng + ".png", buttonText: {displayText: 'DOCUMENT'}, type: 1}
+const sections = [
+    {
+	title: "",
+	rows: [
+{title: "1", rowId: prefix + 'rbgi ' + namePng + ".png", description: 'image'},
+{title: "2", rowId: prefix + 'rebgs ' + namePng + ".png", description: 'sticker'},
+{title: "3", rowId: prefix + 'rbgd ' + namePng + ".png", description: 'document'},
 ]
-    const buttonMessage = {
+}
+]
+    const listMessage = {
         caption: dat,
         footer: config.FOOTER,
         buttons: buttons,
         headerType: 1
     }
-    return await conn.buttonMessage(from, buttonMessage, mek)
+    await conn.replyList(from, listMessage,{quoted: mek})
 
 }else return await  reply(imgmsg)
 } catch (e) {
