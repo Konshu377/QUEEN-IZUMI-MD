@@ -41,15 +41,17 @@ async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGr
 try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-  `
+*📚 Name :* ${data.name}
+├──────────────────        
+*📥 Size :* ${data.size}  `
 
 	 const sections = [
     {
 	title: "",
 	rows: [
 	    
-	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'Download your apk'},
-            {title: "2", rowId: prefix + 'apkinfo ' + q , description: 'See apk info'} , 
+	    {title: "1", rowId: prefix + 'apk1 ' + q , description: '📥 Download your apk'},
+            {title: "2", rowId: prefix + 'apkinfo ' + q , description: '📃 See apk info'} , 
 
 	]
     } 
