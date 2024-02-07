@@ -10,8 +10,8 @@ if(config.LANG === 'SI') imgmsg = "```කරුණාකර නමක් දෙ�
 else imgmsg = "```Please give me a name !```"
 
 var imgmsg2 =''
-if(config.LANG === 'SI') imgmsg2 = "*උදා: .photooxy2 Vajira+Timasha*"
-else imgmsg2 = "*Ex: .photooxy2 Vajira+Timasha*"
+if(config.LANG === 'SI') imgmsg2 = "*උදා: .photooxy2 vihanga+ashinshana*"
+else imgmsg2 = "*Ex: .photooxy2 vihanga+ashinshana*"
 
 var desc =''
 if(config.LANG === 'SI') desc = "එය වචන 1කින් photooxy logos නිර්මාණය කරයි.."
@@ -30,11 +30,12 @@ if(config.LANG === 'SI') errt = "*මට මෙම ලාංඡනය නිර�
 else errt = "*I cant create this logo :(*"
 
 cmd({
-    pattern: "logo2",
+    pattern: "photooxy1",
     react: '💫',
+    alias: ["logo3","photooxy"],
     desc: desc,
     category: "logo",
-    use: '.photooxy1 wmr tech',
+    use: '.photooxy1 vihanga yt',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -47,8 +48,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 1 && !data[i].images){
 srh.push({
-description: data[i].title,
-title: i + 1,
+title: data[i].title,
 rowId: prefix + 'dlogo3 ' + q + '+' + data[i].url
 });
 }
@@ -58,7 +58,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+text: `┌───[🍭Zero-Two🍭]
 
    *PHOTOOXY LOGO 01*
 
@@ -68,7 +68,8 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 💫',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
+
 } catch (e) {
 reply(errt)
 l(e)
@@ -76,11 +77,12 @@ l(e)
 })
 
 cmd({
-    pattern: "logo3",
+    pattern: "photooxy2",
     react: '🎡',
+    alias: ["logo4"],
     desc: desc2,
     category: "logo",
-    use: '.photooxy2 vajira+rathnayaka',
+    use: '.photooxy2 vihanga+ashinshana',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -93,8 +95,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 2 && !data[i].images){
 srh.push({
-description: data[i].title,
-title: i + 1,
+title: data[i].title,
 rowId: prefix + 'dlogo4 ' + q + '+' + data[i].url
 });
 }
@@ -104,7 +105,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+text: `┌───[🍭Zero-Two🍭]
 
    *PHOTOOXY LOGO 02*
 
@@ -114,7 +115,7 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
 
 } catch (e) {
 reply(errt)
@@ -123,8 +124,9 @@ l(e)
 })
 
 cmd({
-    pattern: "logo4",
+    pattern: "photooxy3",
     react: '🎡',
+    alias: ["logo5"],
     desc: desc2,
     category: "logo",
     use: '.photooxy3 <reply image',
@@ -146,8 +148,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 0 && data[i].images.length === 1){
 srh.push({
-description: data[i].title,
-title: i + 1,
+title: data[i].title,
 rowId: prefix + 'dlogo5 ' + "./" + type.ext + '+' + data[i].url
 });
 }
@@ -157,7 +158,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+text: `┌───[🍭Zero-Two🍭]
 
    *PHOTOOXY LOGO 03*
 
@@ -167,7 +168,7 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
 } else return await reply(imgmsgeew)
 } catch (e) {
 reply(errt)
@@ -176,7 +177,7 @@ l(e)
 })
 
 cmd({
-    pattern: "dlogo",
+    pattern: "dlogo3",
     dontAddCommandList: true,
     filename: __filename
 },
