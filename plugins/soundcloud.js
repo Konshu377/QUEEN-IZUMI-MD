@@ -46,9 +46,8 @@ if(config.LANG === 'SI') imgmsg = "```කරුණාකර වචන කිහ�
 else imgmsg = "```Please write a few words!```"
 
 cmd({
-    pattern: "soundcloud",
+    pattern: "play",
     react: "📱",
-    alias: ["song2","scdl"],
     desc: urlneed,
     category: "download",
     use: '.soundcloud lelena',
@@ -64,7 +63,8 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
   if(data[i].thumb && !data[i].views.includes('Follow')){
 srh.push({
-title: data[i].title,
+description: data[i].title,
+title: i + 1,
 description: data[i].artist + ' | ' + data[i].views + ' | '+ data[i].release + ' | '+ data[i].timestamp,
 rowId: prefix + 'selectaud2 ' + data[i].url
 });
