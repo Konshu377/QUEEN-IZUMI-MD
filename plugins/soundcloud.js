@@ -46,8 +46,9 @@ if(config.LANG === 'SI') imgmsg = "```කරුණාකර වචන කිහ�
 else imgmsg = "```Please write a few words!```"
 
 cmd({
-    pattern: "play",
+    pattern: "soundcloud",
     react: "📱",
+    alias: ["song2","scdl"],
     desc: urlneed,
     category: "download",
     use: '.soundcloud lelena',
@@ -63,8 +64,8 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
   if(data[i].thumb && !data[i].views.includes('Follow')){
 srh.push({
-description: data[i].title + ' | ' + data[i].artist + ' | ' + data[i].views + ' | '+ data[i].release + ' | '+ data[i].timestamp,
-title: i + 1,
+title: data[i].title,
+description: data[i].artist + ' | ' + data[i].views + ' | '+ data[i].release + ' | '+ data[i].timestamp,
 rowId: prefix + 'selectaud2 ' + data[i].url
 });
   }
@@ -74,7 +75,7 @@ title: "_[Result from m.soundcloud.com]_",
 rows: srh
 }]
 const listMessage = {
-text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+text: `┌───[🍭Zero-Two🍭]
 
    *SOUNDCLOUD DOWNLOADER*
 
@@ -84,54 +85,33 @@ title: 'Result from m.soundcloud.com 📲',
 buttonText: '*🔢 Reply below number*',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage,mek)
 } catch (e) {
   reply('*ERROR !!*')
   l(e)
 }
 })
 
-
 cmd({
-  pattern: "selectaud",
-  alias: ["selectaud"],
+  alias: ["selectaud2"],
   filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+let dat = `┌───[🍭Zero-Two🍭]
 
   *SELECT SONG TYPE*`
-
-	 const sections = [
-    {
-	title: "",
-	rows: [
-	    {title: "1", sounddoc: prefix + 'ytdocs ' + q , description: 'Document type Song'},
-	    {title: "2", soundaud: prefix + 'ytmp3 ' + q , description: 'Audio type Song'} , 
-
-	]
-    } 
+const buttons = [
+  {buttonId: prefix + 'sounddoc ' + q, buttonText: {displayText: 'DOCUMENT SONG'}, type: 1},
+  {buttonId: prefix + 'soundaud ' + q, buttonText: {displayText: 'AUDIO SONG'}, type: 1}
 ]
-	const listMessage = {
- text : dat ,
-  footer: config.FOOTER,
-  buttonText: "🔢 Reply below number,",
-  sections,
-  contextInfo: {
-				
-				externalAdReply: { 
-					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
-					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
-					mediaType: 1,
-					sourceUrl: "" ,
-          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
-					renderLargerThumbnail: false,
-          showAdAttribution: true
-         }}	
-}
- 
-return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+  const buttonMessage = {
+      caption: dat,
+      footer: config.FOOTER,
+      buttons: buttons,
+      headerType: 1
+  }
+return await conn.buttonMessage(from, buttonMessage, mek)
 } catch (e) {
 reply(N_FOUND)
 l(e)
