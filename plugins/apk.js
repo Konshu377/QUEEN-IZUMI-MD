@@ -18,32 +18,35 @@ else imgmsg = "```Please write a few words!```"
 
 cmd({
     pattern: "apk",
-    react: '🖼️',
-    desc: desc2,
+    react: "📱",
+    desc: urlneed,
     category: "download",
-    use: '.img2 car',
+    use: '.apk whatsapp',
     filename: __filename
 },
-async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-*QUEEN IZUMI APKDL*
-
-  *SELECT you want to*`
-
-	 const sections = [
+	var msg = mek
+if(os.hostname().length == 12 ) hostname = 'replit'
+else if(os.hostname().length == 36) hostname = 'heroku'
+else if(os.hostname().length == 8) hostname = 'koyeb'
+else hostname = os.hostname()
+let monspace ='```'
+let monspacenew ='`'
+if(config.ALIVE === "default") {
+ const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'Down apk'},
-        {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'See apk info'} , 
+	    {title: "1", rowId: prefix + 'apk1 ' , description: 'Download your apk'},
+	    {title: "2", rowId: prefix + 'apkinfo ' , description: 'See the apk info'} ,
 
 	]
     } 
 ]
-	const listMessage = {
- text : dat ,
+const listMessage = {
+  caption: `test`,
+  image : { url : config.LOGO} ,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
   sections,
@@ -59,10 +62,43 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
           showAdAttribution: true
          }}	
 }
- 
-return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+
+return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+}
+else {
+  const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'apk1 ' , description: 'Download your apk'},
+	    {title: "2", rowId: prefix + 'apkinfo ' , description: 'See the apk info'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  caption: config.ALIVE,
+  image : { url : config.LOGO} ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+return await conn.replyList(from, listMessage ,{ quoted : msg })
+}
 } catch (e) {
-reply(N_FOUND)
+reply('*Error !!*')
 l(e)
 }
 })
