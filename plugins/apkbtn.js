@@ -50,9 +50,9 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'dapk ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴀᴘᴋ 📥'},
-	    {title: "2", rowId: prefix + 'apk1 ' + q , description: 'ꜱɪᴍɪʟᴇʀ ᴛᴏ ᴛʜᴀᴛ ᴀᴘᴋ 📦'} ,
-	    {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ᴀᴘᴋ ɪɴꜰᴏᴍᴀᴛɪᴏɴ 📃'},
+	    {title: "1.1", rowId: prefix + 'dapk ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴀᴘᴋ 📥'},
+	    {title: "1.2", rowId: prefix + 'apk1 ' + q , description: 'ꜱɪᴍɪʟᴇʀ ᴛᴏ ᴛʜᴀᴛ ᴀᴘᴋ 📦'} ,
+	    {title: "1.3", rowId: prefix + 'apkinfo ' + q , description: 'ᴀᴘᴋ ɪɴꜰᴏᴍᴀᴛɪᴏɴ 📃'},
         
 	]
     } 
