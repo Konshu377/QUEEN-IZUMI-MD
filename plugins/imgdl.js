@@ -31,7 +31,6 @@ else errt = "*I couldn't find anything :(*"
 
 
 cmd({
-cmd({
     pattern: "img",
     react: '🖼️',
     desc: desc2,
