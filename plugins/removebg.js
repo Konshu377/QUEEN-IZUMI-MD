@@ -19,6 +19,8 @@ else descg = "It remove background your replied photo."
 var cant = ''
 if(config.LANG === 'SI') cant = "මට මෙම රූපයේ පසුබිම ඉවත් කළ නොහැක."
 else cant = "I can't remove background on this image."
+
+
 cmd({
     pattern: "removebg",
     react: "🔮",
