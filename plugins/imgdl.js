@@ -96,11 +96,11 @@ const results = await unsplash.search({"query": q, page: 1})
 let data = results
 if (data.result.length < 1) return await conn.sendMessage(from, { text: N_FOUND }, { quoted: mek } )
 var srh = [];  
+let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
-description: data[i].name,
 title: i + 1,
-rowId: prefix + 'dimg ' + data[i].id
+rowId: prefix + 'dimg ' + data.result[i]
 });
 }
 const sections = [{
