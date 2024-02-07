@@ -25,11 +25,12 @@ if(config.LANG === 'SI') errt = "*මට මෙම ලාංඡනය නිර�
 else errt = "*I cant create this logo :(*"
 
 cmd({
-    pattern: "logo",
+    pattern: "textpro1",
     react: '🎡',
+    alias: ["logo","textpro"],
     desc: desc,
     category: "logo",
-    use: '.textpro1 vajira yt',
+    use: '.textpro1 vihanga yt',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -42,8 +43,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(!data[i].double_text && !data[i].need_image){
 srh.push({
-description: data[i].title,
-title: i + 1,
+title: data[i].title,
 rowId: prefix + 'dlogo ' + q + '+' + data[i].url
 });
 }
@@ -53,7 +53,7 @@ title: "Result from textpro. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+text: `┌───[🍭Zero-Two🍭]
 
    *TEXTPRO LOGO 01*
 
@@ -63,7 +63,7 @@ title: 'Result from textpro. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
 
 } catch (e) {
 reply(errt)
@@ -72,11 +72,12 @@ l(e)
 })
 
 cmd({
-    pattern: "banner",
+    pattern: "textpro2",
     react: '🎡',
+    alias: ["logo2"],
     desc: desc2,
     category: "logo",
-    use: '.textpro2 vajira+rathnayaka',
+    use: '.textpro2 vihanga+ashinshana',
     filename: __filename
 },
 async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -89,8 +90,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].double_text && !data[i].need_image){
 srh.push({
-description: data[i].title,
-title: i + 1,
+title: data[i].title,
 rowId: prefix + 'dlogo2 ' + q + '+' + data[i].url
 });
 }
@@ -100,7 +100,7 @@ title: "Result from textpro. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+text: `┌───[🍭Zero-Two🍭]
 
    *TEXTPRO LOGO 02*
 
@@ -110,7 +110,7 @@ title: 'Result from textpro. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
 
 } catch (e) {
 reply(errt)
