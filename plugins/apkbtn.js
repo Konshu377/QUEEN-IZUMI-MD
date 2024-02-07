@@ -40,11 +40,11 @@ cmd({
 async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-├──────────────────        
+────────────────────────        
 
   *𝗤𝗨𝗘𝗘𝗡 𝗜𝗭𝗨𝗠𝗜 𝗔𝗣𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥*
 	
-├──────────────────`   
+├───────────────────────┤`   
 
 	 const sections = [
     {
