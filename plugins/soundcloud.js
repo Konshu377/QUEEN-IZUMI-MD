@@ -63,7 +63,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
   if(data[i].thumb && !data[i].views.includes('Follow')){
 srh.push({
-description: data[i].name,
+description: data.results[i].title ,
 title: i + 1,
 rowId: prefix + 'selectaud2 ' + data[i].url
 });
