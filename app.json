@@ -34,7 +34,7 @@
         "LOGO": {
             "description": "put url here",
             "required": true,
-            "value": ""
+            "value": "https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg"
         },
         "LANG": {
             "description": "put SI/EN here",
@@ -59,7 +59,7 @@
         "FOOTER": {
             "description": "put any text or put default to elier footer here",
             "required": true,
-            "value": ""
+            "value": "©ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ"
         },
         "ONLY_GROUP": {
             "description": "Add the worktype of the Bot ( private , public , only_group )",
