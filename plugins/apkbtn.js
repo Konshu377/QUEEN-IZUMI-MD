@@ -17,9 +17,7 @@ async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGr
 try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-*📚 Name :* ${data.name}
-├──────────────────        
-*📥 Size :* ${data.size}`
+`
 
 	 const sections = [
     {
