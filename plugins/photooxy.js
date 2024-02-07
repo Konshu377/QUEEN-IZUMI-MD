@@ -30,9 +30,8 @@ if(config.LANG === 'SI') errt = "*මට මෙම ලාංඡනය නිර�
 else errt = "*I cant create this logo :(*"
 
 cmd({
-    pattern: "photooxy1",
+    pattern: "logo1",
     react: '💫',
-    alias: ["logo3","photooxy"],
     desc: desc,
     category: "logo",
     use: '.photooxy1 vihanga yt',
@@ -48,7 +47,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 1 && !data[i].images){
 srh.push({
-title: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo3 ' + q + '+' + data[i].url
 });
 }
@@ -68,7 +67,7 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 💫',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
@@ -77,9 +76,8 @@ l(e)
 })
 
 cmd({
-    pattern: "photooxy2",
+    pattern: "logo2",
     react: '🎡',
-    alias: ["logo4"],
     desc: desc2,
     category: "logo",
     use: '.photooxy2 vihanga+ashinshana',
@@ -95,7 +93,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 2 && !data[i].images){
 srh.push({
-title: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo4 ' + q + '+' + data[i].url
 });
 }
@@ -115,7 +113,7 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
@@ -124,9 +122,8 @@ l(e)
 })
 
 cmd({
-    pattern: "photooxy3",
+    pattern: "logo3",
     react: '🎡',
-    alias: ["logo5"],
     desc: desc2,
     category: "logo",
     use: '.photooxy3 <reply image',
@@ -148,7 +145,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 0 && data[i].images.length === 1){
 srh.push({
-title: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo5 ' + "./" + type.ext + '+' + data[i].url
 });
 }
@@ -168,7 +165,7 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 } else return await reply(imgmsgeew)
 } catch (e) {
 reply(errt)
