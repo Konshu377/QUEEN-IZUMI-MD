@@ -63,8 +63,8 @@ else {
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1' , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
-	    {title: "2", rowId: prefix + 'apkinfo' , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
+	    {title: "1", rowId: prefix + 'apk1'  + anu.url , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
+	    {title: "2", rowId: prefix + 'apkinfo'  + anu.url , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
 
 	]
     } 
