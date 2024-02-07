@@ -146,7 +146,8 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
-title: 'Image number: ' + nombor++ ,
+description: 'Image number: ' + nombor++ ,
+title: i + 1,
 rowId: prefix + 'dimg ' + data.result[i]
 });
 }
@@ -165,7 +166,7 @@ title: 'Result from pixabay.com. 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
@@ -191,8 +192,8 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.results.length; i++) {
 srh.push({
-title: data.results[i].title ,
-description: data.results[i].description ,
+description: data.results[i].title ,
+title: i + 1,
 rowId: prefix + 'dimg ' + data.results[i].direct
 });
 }
@@ -211,7 +212,7 @@ title: 'Result from bing 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
@@ -237,8 +238,8 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.length; i++) {
 srh.push({
-title: 'Image number: ' + nombor++ ,
-description: data[i].width+'x'+data[i].height,
+description: 'Image number: ' + nombor++ ,
+title: i + 1,
 rowId: prefix + 'dimg ' + data[i].url
 });
 }
@@ -257,7 +258,7 @@ title: 'Result from google. 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
