@@ -16,6 +16,7 @@ if(config.LANG === 'SI') imgmsg = "```කරුණාකර වචන කිහ�
 else imgmsg = "```Please write a few words!```"
 
 
+
 cmd({
     pattern: "sub",
     react: "🎞️",
@@ -34,7 +35,7 @@ if (data.length < 1) return await conn.sendMessage(from, { text: N_FOUND}, { quo
 var srh = [];  
 for (var i = 0; i < data.length; i++) {
 srh.push({
-description: data[i].title,
+deacription: data[i].title,
 title: i + 1,
 rowId: prefix + 'dsub ' + data[i].link
 });
