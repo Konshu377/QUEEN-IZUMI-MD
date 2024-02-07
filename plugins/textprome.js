@@ -43,7 +43,8 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(!data[i].double_text && !data[i].need_image){
 srh.push({
-title: data[i].title,
+description: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo ' + q + '+' + data[i].url
 });
 }
@@ -53,7 +54,7 @@ title: "Result from textpro. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *TEXTPRO LOGO 01*
 
@@ -63,8 +64,7 @@ title: 'Result from textpro. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
-
+await conn.replyList(from, listMessage,{quoted: mek})
 } catch (e) {
 reply(errt)
 l(e)
@@ -90,7 +90,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].double_text && !data[i].need_image){
 srh.push({
-title: data[i].title,
+description: data[i].title,
 rowId: prefix + 'dlogo2 ' + q + '+' + data[i].url
 });
 }
@@ -100,7 +100,7 @@ title: "Result from textpro. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *TEXTPRO LOGO 02*
 
@@ -110,7 +110,7 @@ title: 'Result from textpro. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
