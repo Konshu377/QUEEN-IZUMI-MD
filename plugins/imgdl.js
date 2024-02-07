@@ -80,7 +80,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
-title: 'Image number: ' + nombor++ ,
+title: i + 1,
 rowId: prefix + 'dimg ' + data.result[i]
 });
 }
@@ -99,7 +99,7 @@ title: 'Result from unsplash.com. 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
