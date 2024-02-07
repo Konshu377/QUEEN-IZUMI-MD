@@ -80,6 +80,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
+description: data.result[i].name,
 title: i + 1,
 rowId: prefix + 'dimg ' + data.result[i]
 });
