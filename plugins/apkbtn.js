@@ -40,10 +40,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-*📚 Name :* ${data.name}
-├──────────────────        
-*📥 Size :* ${data.size}  `
+ `
 
 	 const sections = [
     {
@@ -78,5 +75,129 @@ return await conn.replyList(from, listMessage ,{ quoted : mek })
 } catch (e) {
 reply(N_FOUND)
 l(e)
+}
+})
+
+
+cmd({
+    pattern: "apkinfo",
+    use: '.song lelena',
+    react: "🎧",
+    desc: descs,
+    category: "download",
+    filename: __filename
+
+},
+
+async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
+if (!q) return await reply(imgmsg)
+if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
+if(isUrl(q) && q.includes('/shorts')){let dat = `┌───[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]`
+
+const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'ytdocs ' + q , description: 'Down song document'},
+	    {title: "2", rowId: prefix + 'ytmp3 ' + q , description: 'Down song audio'} ,
+            {title: "3", rowId: prefix + 'ytinfo ' + q , description: 'To see song info'} ,
+	]
+    } 
+]
+const listMessage = {
+  text: dat,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 				      
+}
+if(ytreg(q)){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+
+`
+const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'ytdocs ' + q , description: 'Down song document'},
+	    {title: "2", rowId: prefix + 'ytmp3 ' + q , description: 'Down song audio'} ,
+            {title: "3", rowId: prefix + 'ytinfo ' + q , description: 'To see song info'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  text: dat,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections }	
+
+	     
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+
+}
+let yts = require("yt-search")
+let search = await yts(q)
+let anu = search.videos[0]
+const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+
+   *APK I FORMATION*
+
+*📚 Name :* ${data.name}
+├──────────────────        
+*📦 Developer :* ${data.package}
+├──────────────────        
+*⬆️ Last update :* ${data.lastup}
+├──────────────────        
+*📥 Size :* ${data.size}`
+
+const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'ytdocs ' + anu.url , description: 'Down song document'},
+	    {title: "2", rowId: prefix + 'ytmp3 ' + anu.url , description: 'Down song audio'} ,
+            {title: "3", rowId: prefix + 'ytinfo ' + anu.url , description: 'To see song info'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  image: {url: anu.thumbnail},
+  caption: cap,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+await conn.replyList(from, listMessage ,{ quoted : mek }) 
+
+} catch (e) {
+  reply(N_FOUND)
+  l(e)
 }
 })
