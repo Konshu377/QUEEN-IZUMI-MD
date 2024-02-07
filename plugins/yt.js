@@ -83,7 +83,6 @@ await conn.sendMessage(from , { text:  mesaj }, { quoted: mek } )
 
 cmd({
     pattern: "yt",
-    alias: ["play"],
     use: '.yt lelena',
     react: "📽️",
     desc: descyt,
