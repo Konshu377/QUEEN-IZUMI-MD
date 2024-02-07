@@ -71,8 +71,11 @@ await conn.sendMessage(from, { react: { text: '📥', key: mek.key }})
 if(!q) return await conn.sendMessage(from , { text: '*Need apk link...*' }, { quoted: mek } ) 
 const data = await apkdl.download(q)
 let listdata = `*📚 Name :* ${data.name}
+├──────────────────        
 *📦 Developer :* ${data.package}
+├──────────────────        
 *⬆️ Last update :* ${data.lastup}
+├──────────────────        
 *📥 Size :* ${data.size}`
 await conn.sendMessage(from, { image: { url: data.icon }, caption: listdata }, { quoted: mek })
 if (data.size.includes('GB')) return await conn.sendMessage(from , { text: '*File size is too big...*' }, { quoted: mek } )
@@ -104,7 +107,7 @@ await conn.sendMessage(from, { image: { url: data.icon }, caption: listdata }, {
 await conn.sendMessage(from, { react: { text: '📁', key: sendapk.key }})
 await conn.sendMessage(from, { react: { text: '✔', key: mek.key }})
 } catch (e) {
-    reply('*ERROR !!*')
+    reply('*ʜᴇʀᴇ ʏᴏᴜʀ ᴀᴘᴋ*')
   l(e)
 }
 })
