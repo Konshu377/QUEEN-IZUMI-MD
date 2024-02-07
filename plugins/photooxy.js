@@ -48,7 +48,8 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 1 && !data[i].images){
 srh.push({
-title: data[i].title,
+description: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo3 ' + q + '+' + data[i].url
 });
 }
@@ -58,7 +59,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *PHOTOOXY LOGO 01*
 
@@ -68,7 +69,7 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 💫',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
@@ -95,7 +96,8 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 2 && !data[i].images){
 srh.push({
-title: data[i].title,
+description: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo4 ' + q + '+' + data[i].url
 });
 }
@@ -105,7 +107,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *PHOTOOXY LOGO 02*
 
@@ -115,7 +117,7 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
@@ -148,7 +150,8 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 if(data[i].text === 0 && data[i].images.length === 1){
 srh.push({
-title: data[i].title,
+description: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo5 ' + "./" + type.ext + '+' + data[i].url
 });
 }
@@ -158,7 +161,7 @@ title: "Result from photooxy. 📲",
 rows: srh
 }]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *PHOTOOXY LOGO 03*
 
@@ -168,7 +171,7 @@ title: 'Result from photooxy. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 } else return await reply(imgmsgeew)
 } catch (e) {
 reply(errt)
