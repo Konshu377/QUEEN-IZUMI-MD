@@ -19,8 +19,6 @@ else descg = "It remove background your replied photo."
 var cant = ''
 if(config.LANG === 'SI') cant = "මට මෙම රූපයේ පසුබිම ඉවත් කළ නොහැක."
 else cant = "I can't remove background on this image."
-
-
 cmd({
     pattern: "removebg",
     react: "🔮",
@@ -54,49 +52,30 @@ try{
       },
     });
 await pipeline(rbg, fs.createWriteStream(namePng + ".png"));
-let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+let dat = `┌───[🍭Zero-Two🍭]
 
    *🌆 BACKGROUND REMOVER*
 
 `
-const sections = [
-    {
-	title: "",
-	rows: [
-{title: "1", rowId: prefix + 'rbgi ' + namePng + ".png", description: 'IMAGE'},
-{title: "2", rowId: prefix + 'rebgs ' + namePng + ".png", description: 'STICKER'},
-{title: "3", rowId: prefix + 'rbgd ' + namePng + ".png", description: 'DOCUMENT'},
+const buttons = [
+{buttonId: prefix + 'rbgi ' + namePng + ".png", buttonText: {displayText: 'IMAGE'}, type: 1},
+{buttonId: prefix + 'rebgs ' + namePng + ".png", buttonText: {displayText: 'STICKER'}, type: 1},
+{buttonId: prefix + 'rbgd ' + namePng + ".png", buttonText: {displayText: 'DOCUMENT'}, type: 1}
 ]
+    const buttonMessage = {
+        caption: dat,
+        footer: config.FOOTER,
+        buttons: buttons,
+        headerType: 1
     }
-    ]
-    
-const listMessage = {
-  image: {url: anu.thumbnail},
-  caption: cap,
-  footer: config.FOOTER,
-  buttonText: "🔢 Reply below number,",
-  sections,
-  contextInfo: {
-				
-				externalAdReply: { 
-					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
-					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
-					mediaType: 1,
-					sourceUrl: "" ,
-          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
-					renderLargerThumbnail: false,
-          showAdAttribution: true
-         }}	
-}
+    return await conn.buttonMessage(from, buttonMessage, mek)
 
-await conn.replyList(from, listMessage ,{ quoted : mek }) 
-
+}else return await  reply(imgmsg)
 } catch (e) {
-  reply(N_FOUND)
-  l(e)
+reply(cant)
+l(e)
 }
 })
-
 
 cmd({
   pattern: "rbgi",
