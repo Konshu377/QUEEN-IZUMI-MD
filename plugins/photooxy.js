@@ -30,7 +30,7 @@ if(config.LANG === 'SI') errt = "*මට මෙම ලාංඡනය නිර�
 else errt = "*I cant create this logo :(*"
 
 cmd({
-    pattern: "logo1",
+    pattern: "logo2",
     react: '💫',
     desc: desc,
     category: "logo",
@@ -76,7 +76,7 @@ l(e)
 })
 
 cmd({
-    pattern: "logo2",
+    pattern: "logo3",
     react: '🎡',
     desc: desc2,
     category: "logo",
@@ -123,7 +123,7 @@ l(e)
 })
 
 cmd({
-    pattern: "logo3",
+    pattern: "logo4",
     react: '🎡',
     desc: desc2,
     category: "logo",
@@ -176,7 +176,7 @@ l(e)
 })
 
 cmd({
-    pattern: "dlogo3",
+    pattern: "dlogo",
     dontAddCommandList: true,
     filename: __filename
 },
