@@ -43,7 +43,7 @@ title: "_[Result from playstore.]_",
 rows: srh
 }]
 const listMessage = {
-text: `┌───[🍭Zero-Two🍭]
+text: `┌───[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *APK DOWNLOADER*
 
