@@ -63,7 +63,7 @@ title: 'Result from textpro. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
@@ -110,7 +110,7 @@ title: 'Result from textpro. 📲',
 buttonText: 'Select Logo 🎡',
 sections
 }
-await conn.listMessage(from, listMessage, mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 
 } catch (e) {
 reply(errt)
