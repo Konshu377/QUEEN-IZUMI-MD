@@ -34,8 +34,8 @@ if (data.length < 1) return await conn.sendMessage(from, { text: N_FOUND}, { quo
 var srh = [];  
 for (var i = 0; i < data.length; i++) {
 srh.push({
-title: data[i].title,
-description: '',
+description: data[i].title,
+title: i + 1,
 rowId: prefix + 'dsub ' + data[i].link
 });
 }
