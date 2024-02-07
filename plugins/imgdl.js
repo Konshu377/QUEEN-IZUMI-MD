@@ -99,7 +99,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
-description: data.result[i].name,
+description: data.results[i].title ,
 title: i + 1,
 rowId: prefix + 'dimg ' + data.result[i]
 });
@@ -145,7 +145,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
-description: 'Image number: ' + nombor++ ,
+description: data.results[i].title ,
 title: i + 1,
 rowId: prefix + 'dimg ' + data.result[i]
 });
@@ -237,7 +237,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.length; i++) {
 srh.push({
-description: 'Image number: ' + nombor++ ,
+description: data.results[i].title ,
 title: i + 1,
 rowId: prefix + 'dimg ' + data[i].url
 });
