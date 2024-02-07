@@ -91,6 +91,7 @@ for (var i = 0; i < data.length; i++) {
 if(data[i].double_text && !data[i].need_image){
 srh.push({
 description: data[i].title,
+title: i + 1,
 rowId: prefix + 'dlogo2 ' + q + '+' + data[i].url
 });
 }
