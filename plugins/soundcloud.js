@@ -63,7 +63,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
   if(data[i].thumb && !data[i].views.includes('Follow')){
 srh.push({
-description: data[i].title,
+description: data[i].name,
 title: i + 1,
 rowId: prefix + 'selectaud2 ' + data[i].url
 });
@@ -84,7 +84,7 @@ title: 'Result from m.soundcloud.com 📲',
 buttonText: '*🔢 Reply below number*',
 sections
 }
-await conn.listMessage(from, listMessage,mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 } catch (e) {
   reply('*ERROR !!*')
   l(e)
