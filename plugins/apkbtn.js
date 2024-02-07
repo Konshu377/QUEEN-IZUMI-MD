@@ -7,7 +7,7 @@ const {unsplash, pixabay} = require("@sl-code-lords/image-library")
 
 cmd({
     pattern: "apk",
-    react: '📥',
+    react: '🖼️',
     desc: desc2,
     category: "download",
     use: '.img2 car',
@@ -17,15 +17,15 @@ async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGr
 try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-`
+  `
 
 	 const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1 ' + q , description: '📥 Download apk'},
-	    {title: "2", rowId: prefix + 'apkinfo ' + q , description: '📃 See apk info'} ,
-	  
+	    
+	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'Download your apk'},
+            {title: "2", rowId: prefix + 'apkinfo ' + q , description: 'See apk info'} , 
 
 	]
     } 
@@ -33,7 +33,7 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 	const listMessage = {
  text : dat ,
   footer: config.FOOTER,
-  buttonText: "🔢 Reply below number you want,",
+  buttonText: "🔢 Reply below number,",
   sections,
   contextInfo: {
 				
@@ -54,5 +54,3 @@ reply(N_FOUND)
 l(e)
 }
 })
-
-
