@@ -65,7 +65,6 @@ for (var i = 0; i < data.length; i++) {
 srh.push({
 description: data[i].title,
 title: i + 1,
-description: data[i].artist + ' | ' + data[i].views + ' | '+ data[i].release + ' | '+ data[i].timestamp,
 rowId: prefix + 'selectaud2 ' + data[i].url
 });
   }
@@ -75,7 +74,7 @@ title: "_[Result from m.soundcloud.com]_",
 rows: srh
 }]
 const listMessage = {
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *SOUNDCLOUD DOWNLOADER*
 
@@ -92,31 +91,52 @@ await conn.listMessage(from, listMessage,mek)
 }
 })
 
+
 cmd({
   alias: ["selectaud2"],
   filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let dat = `┌───[🍭Zero-Two🍭]
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
   *SELECT SONG TYPE*`
-const buttons = [
-  {buttonId: prefix + 'sounddoc ' + q, buttonText: {displayText: 'DOCUMENT SONG'}, type: 1},
-  {buttonId: prefix + 'soundaud ' + q, buttonText: {displayText: 'AUDIO SONG'}, type: 1}
+
+	 const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'soundaud ' + q , description: 'AUDIO SONG'},
+	    {title: "2", rowId: prefix + 'sounddoc ' + q , description: 'DOCUMENT SONG'} 
+
+	]
+    } 
 ]
-  const buttonMessage = {
-      caption: dat,
-      footer: config.FOOTER,
-      buttons: buttons,
-      headerType: 1
-  }
-return await conn.buttonMessage(from, buttonMessage, mek)
+	const listMessage = {
+ text : dat ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+ 
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
 } catch (e) {
 reply(N_FOUND)
 l(e)
 }
 })
+
 
 cmd({
     pattern: "sounddoc",
