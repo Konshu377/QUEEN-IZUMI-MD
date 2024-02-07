@@ -15,8 +15,60 @@ var imgmsg =''
 if(config.LANG === 'SI') imgmsg = "```කරුණාකර වචන කිහිපයක් ලියන්න!```"
 else imgmsg = "```Please write a few words!```"
 
+
 cmd({
     pattern: "apk",
+    react: '🖼️',
+    desc: desc2,
+    category: "download",
+    use: '.img2 car',
+    filename: __filename
+},
+async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+
+*QUEEN IZUMI APKDL*
+
+  *SELECT you want to*`
+
+	 const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'Down apk'},
+        {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'See apk info'} , 
+
+	]
+    } 
+]
+	const listMessage = {
+ text : dat ,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections,
+  contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+ 
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+} catch (e) {
+reply(N_FOUND)
+l(e)
+}
+})
+
+cmd({
+    pattern: "apk1",
     react: "📱",
     alias: ["findapk","playstore"],
     desc: urlneed,
