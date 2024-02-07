@@ -9,37 +9,33 @@ else tmsg = "It gives bot link."
 
 cmd({
     pattern: "apk",
-    react: "👨‍💻",
-    desc: "Check bot online or no.",
-    category: "main",
-    use: '.alive',
+    use: '.apk whatsapp',
+    react: "🎧",
+    desc: descs,
+    category: "download",
     filename: __filename
+
 },
+
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-	var msg = mek
-if(os.hostname().length == 12 ) hostname = 'replit'
-else if(os.hostname().length == 36) hostname = 'heroku'
-else if(os.hostname().length == 8) hostname = 'koyeb'
-else hostname = os.hostname()
-let monspace ='```'
-let monspacenew ='`'
-if(config.ALIVE === "default") {
- const sections = [
+if (!q) return await reply(imgmsg)
+if(isUrl(q) && !ytreg(q)) return await reply(imgmsg)
+if(isUrl(q) && q.includes('/shorts')){let dat = `┌───[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+
+  *SELECT TYPE*`
+
+const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1' , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
-	    {title: "2", rowId: prefix + 'apkinfo' , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'},
-
+	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
+            {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
 	]
     } 
 ]
 const listMessage = {
-  caption: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
-
-   *QUEEN IZUMI WHATSAPP USER BOT* 💫`,
-  image : { url : config.LOGO} ,
+  text: dat,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
   sections,
@@ -56,22 +52,49 @@ const listMessage = {
          }}	
 }
 
-return await conn.replyList(from, listMessage ,{ quoted : msg }) 
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 				      
 }
-else {
-  const sections = [
+if(ytreg(q)){let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
+
+*SELECT SONG TYPE*`
+const sections = [
     {
 	title: "",
 	rows: [
-	    {title: "1", rowId: prefix + 'apk1'  + anu.url , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
-	    {title: "2", rowId: prefix + 'apkinfo'  + anu.url , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
+	    {title: "1", rowId: prefix + 'apk1 ' + q , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
+            {title: "3", rowId: prefix + 'apkinfo ' + q , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
 
 	]
     } 
 ]
 const listMessage = {
-  caption: config.ALIVE,
-  image : { url : config.LOGO} ,
+  text: dat,
+  footer: config.FOOTER,
+  buttonText: "🔢 Reply below number,",
+  sections }	
+
+	     
+return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+
+}
+let yts = require("yt-search")
+let search = await yts(q)
+let anu = search.videos[0]
+const cap = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]`
+
+const sections = [
+    {
+	title: "",
+	rows: [
+	    {title: "1", rowId: prefix + 'apk1 ' + anu.url , description: 'ᴅᴏᴡɴʟᴏᴀᴅ ᴀᴘᴋ'},
+            {title: "3", rowId: prefix + 'apkinfo ' + anu.url , description: 'ꜱᴇᴇ ᴀᴘᴋ ɪɴꜰᴏ'} ,
+
+	]
+    } 
+]
+const listMessage = {
+  image: {url: anu.thumbnail},
+  caption: cap,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
   sections,
@@ -88,10 +111,10 @@ const listMessage = {
          }}	
 }
 
-return await conn.replyList(from, listMessage ,{ quoted : msg })
-}
+await conn.replyList(from, listMessage ,{ quoted : mek }) 
+
 } catch (e) {
-reply('*Error !!*')
-l(e)
+  reply(N_FOUND)
+  l(e)
 }
 })
