@@ -84,7 +84,7 @@ title: 'Result from m.soundcloud.com 📲',
 buttonText: '*🔢 Reply below number*',
 sections
 }
-await conn.listMessage(from, listMessage,mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 } catch (e) {
   reply('*ERROR !!*')
   l(e)
