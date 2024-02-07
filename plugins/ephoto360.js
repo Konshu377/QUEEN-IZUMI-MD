@@ -7,24 +7,24 @@ if(config.LANG === 'SI') imgmsg = "```කරුණාකර නමක් දෙ�
 else imgmsg = "```Please give me a name !```"
 
 var imgmsg2 =''
-if(config.LANG === 'SI') imgmsg2 = "*උදා: .banner vihanga+ashinshana*"
-else imgmsg2 = "*Ex: .banner vihanga+ashinshana*"
+if(config.LANG === 'SI') imgmsg2 = "*උදා: .banner Vajira+Rathnayaka*"
+else imgmsg2 = "*Ex: .banner Vajira+Rathnayaka*"
 
 var imgmsg3 =''
-if(config.LANG === 'SI') imgmsg3 = "*උදා: .banner2 vihanga+ashinshana*"
-else imgmsg3 = "*Ex: .banner2 vihanga+ashinshana*"
+if(config.LANG === 'SI') imgmsg3 = "*උදා: .banner2 Vajira+Rathnayaka*"
+else imgmsg3 = "*Ex: .banner2 Vajira+Rathnayaka*"
 
 var imgmsg4 =''
-if(config.LANG === 'SI') imgmsg4 = "*උදා: .banner3 vihanga+ashinshana*"
-else imgmsg4 = "*Ex: .banner3 vihanga+ashinshana*"
+if(config.LANG === 'SI') imgmsg4 = "*උදා: .banner3 Vajira+Rathnayaka*"
+else imgmsg4 = "*Ex: .banner3 Vajira+Rathnayaka*"
 
 var imgmsg5 =''
-if(config.LANG === 'SI') imgmsg5 = "*උදා: .banner3 vihanga+ashinshana*"
-else imgmsg5 = "*Ex: .banner3 vihanga+ashinshana*"
+if(config.LANG === 'SI') imgmsg5 = "*උදා: .banner3 Vajira+Rathnayaka*"
+else imgmsg5 = "*Ex: .banner3 Vajira+Rathnayaka*"
 
 var imgmsg6 =''
-if(config.LANG === 'SI') imgmsg6 = "*උදා: .banner3 vihanga+ashinshana*"
-else imgmsg6 = "*Ex: .banner3 vihanga+ashinshana*"
+if(config.LANG === 'SI') imgmsg6 = "*උදා: .banner3 Vajira+Rathnayaka*"
+else imgmsg6 = "*Ex: .banner3 Vajira+Rathnayaka*"
 
 var desc =''
 if(config.LANG === 'SI') desc = "එය වචන 1කින් ephoto360 logos නිර්මාණය කරයි.."
@@ -51,7 +51,8 @@ async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGr
 try{
 if (!q) return await reply(imgmsg)
 const sections = [{
-title: "Result from ephoto360. 📲",
+description: "Result from ephoto360. 📲",
+title: i + 1,
 rows: [{
 title: 'Blackpink',
 rowId: prefix + 'dlogo6 ' + q + '+' + 'https://en.ephoto360.com/create-a-blackpink-style-logo-with-members-signatures-810.html'
@@ -191,7 +192,7 @@ rowId: prefix + 'dlogo6 ' + q + '+' + 'https://en.ephoto360.com/create-multicolo
 
 ]}]
 const listMessage = { 
-text: `┌───[🍭Zero-Two🍭]
+text: `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
    *EPHOTO360 LOGO*
 
@@ -214,7 +215,7 @@ cmd({
     alias: ["ytbanner","cover","channelbanner"],
     desc: desc2,
     category: "logo",
-    use: '.banner vihanga+yt',
+    use: '.banner vajira+tech',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -237,7 +238,7 @@ cmd({
     alias: ["ytbanner2","cover2","channelbanner2"],
     desc: desc2,
     category: "logo",
-    use: '.banner2 vihanga+yt',
+    use: '.banner2 vajira+tech',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -260,7 +261,7 @@ cmd({
     alias: ["ytbanner3","cover3","channelbanner3"],
     desc: desc2,
     category: "logo",
-    use: '.banner3 vihanga+yt',
+    use: '.banner3 vajira+tech',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -283,7 +284,7 @@ cmd({
     alias: ["ytbanner4","cover4","channelbanner4"],
     desc: desc2,
     category: "logo",
-    use: '.banner4 vihanga+yt',
+    use: '.banner4 vajira+tech',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -306,7 +307,7 @@ cmd({
     alias: ["ytbanner5","cover5","channelbanner5"],
     desc: desc2,
     category: "logo",
-    use: '.banner5 vihanga+yt',
+    use: '.banner5 vajira+tech',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
