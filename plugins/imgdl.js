@@ -29,6 +29,7 @@ if(config.LANG === 'SI') errt = "*මට කිසිවක් සොයාග�
 else errt = "*I couldn't find anything :(*"
 
 
+
 cmd({
     pattern: "img",
     react: '🖼️',
@@ -41,45 +42,25 @@ async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGr
 try{
 let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-  *SELECT SONG TYPE*`
-
-	 const sections = [
-    {
-	title: "",
-	rows: [
-	    {title: "1", rowId: prefix + 'img1 ' + q , description: 'Image list 1'},
-	    {title: "2", rowId: prefix + 'img2 ' + q , description: 'Image list 2'} ,
-	    {title: "3", rowId: prefix + 'img3 ' + q , description: 'Image list 3'},
-        {title: "4", rowId: prefix + 'img4 ' + q , description: 'Image list 4'} , 
-
-	]
-    } 
+  *Select img list no*`
+const buttons = [
+  {buttonId: prefix + 'img1 ' + q, buttonText: {displayText: 'Image list 1'}, type: 1},
+  {buttonId: prefix + 'img2 ' + q, buttonText: {displayText: 'Image list 2'}, type: 1},
+  {buttonId: prefix + 'img3 ' + q, buttonText: {displayText: 'Image list 3'}, type: 1},
+  {buttonId: prefix + 'img4 ' + q, buttonText: {displayText: 'Image list 4'}, type: 1}
 ]
-	const listMessage = {
- text : dat ,
-  footer: config.FOOTER,
-  buttonText: "🔢 Reply below number,",
-  sections,
-  contextInfo: {
-				
-				externalAdReply: { 
-					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
-					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
-					mediaType: 1,
-					sourceUrl: "" ,
-          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
-					renderLargerThumbnail: false,
-          showAdAttribution: true
-         }}	
-}
- 
-return await conn.replyList(from, listMessage ,{ quoted : mek }) 
+  const buttonMessage = {
+      caption: dat,
+      footer: config.FOOTER,
+      buttons: buttons,
+      headerType: 1
+  }
+return await conn.buttonMessage(from, buttonMessage, mek)
 } catch (e) {
 reply(N_FOUND)
 l(e)
 }
 })
-
 
 cmd({
     pattern: "img1",
@@ -99,7 +80,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
-title: i + 1,
+title: 'Image number: ' + nombor++ ,
 rowId: prefix + 'dimg ' + data.result[i]
 });
 }
@@ -118,7 +99,7 @@ title: 'Result from unsplash.com. 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
 
 } catch (e) {
 reply(errt)
@@ -144,7 +125,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.result.length; i++) {
 srh.push({
-title: i + 1,
+title: 'Image number: ' + nombor++ ,
 rowId: prefix + 'dimg ' + data.result[i]
 });
 }
@@ -163,7 +144,7 @@ title: 'Result from pixabay.com. 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
 
 } catch (e) {
 reply(errt)
@@ -189,7 +170,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.results.length; i++) {
 srh.push({
-title: i + 1,
+title: data.results[i].title ,
 description: data.results[i].description ,
 rowId: prefix + 'dimg ' + data.results[i].direct
 });
@@ -209,7 +190,7 @@ title: 'Result from bing 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
 
 } catch (e) {
 reply(errt)
@@ -235,7 +216,7 @@ var srh = [];
 let nombor = 1
 for (var i = 0; i < data.length; i++) {
 srh.push({
-title: i + 1,
+title: 'Image number: ' + nombor++ ,
 description: data[i].width+'x'+data[i].height,
 rowId: prefix + 'dimg ' + data[i].url
 });
@@ -255,7 +236,7 @@ title: 'Result from google. 📲',
 buttonText: 'Select Image',
 sections
 }
-await conn.replyList(from, listMessage,{quoted: mek})
+await conn.listMessage(from, listMessage, mek)
 
 } catch (e) {
 reply(errt)
