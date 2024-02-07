@@ -33,8 +33,8 @@ if (data.length < 1) return await conn.sendMessage(from, { text: N_FOUND }, { qu
 var srh = [];  
 for (var i = 0; i < data.length; i++) {
 srh.push({
-title: data[i].name,
-description: '',
+description: data[i].name,
+title: i + 1,
 rowId: prefix + 'dapk ' + data[i].id
 });
 }
@@ -53,7 +53,7 @@ title: 'Result from playstore. 📲',
 buttonText: '*🔢 Reply below number*',
 sections
 }
-await conn.listMessage(from, listMessage,mek)
+await conn.replyList(from, listMessage,{quoted: mek})
 } catch (e) {
   reply('*ERROR !!*')
   l(e)
