@@ -135,7 +135,7 @@ const sections = [
     } 
 ]
 const listMessage = {
-  image: 'https://telegra.ph/file/9a5c289f00b21338efe9f.jpg',
+  image: {url: anu.thumbnail},
   caption: cap,
   footer: config.FOOTER,
   buttonText: "🔢 Reply below number,",
