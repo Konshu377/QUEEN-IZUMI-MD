@@ -210,7 +210,7 @@ l(e)
 })
 
 cmd({
-    pattern: "banner",
+    pattern: "banner2",
     alias: ["ytbanner","cover","channelbanner"],
     desc: desc2,
     category: "logo",
@@ -233,7 +233,7 @@ try{
 })
 
 cmd({
-    pattern: "banner2",
+    pattern: "banner3",
     alias: ["ytbanner2","cover2","channelbanner2"],
     desc: desc2,
     category: "logo",
@@ -256,7 +256,7 @@ try{
 })
 
 cmd({
-    pattern: "banner3",
+    pattern: "banner4",
     alias: ["ytbanner3","cover3","channelbanner3"],
     desc: desc2,
     category: "logo",
@@ -279,7 +279,7 @@ try{
 })
 
 cmd({
-    pattern: "banner4",
+    pattern: "banner5",
     alias: ["ytbanner4","cover4","channelbanner4"],
     desc: desc2,
     category: "logo",
@@ -302,7 +302,7 @@ try{
 })
 
 cmd({
-    pattern: "banner5",
+    pattern: "banner6",
     alias: ["ytbanner5","cover5","channelbanner5"],
     desc: desc2,
     category: "logo",
