@@ -4,6 +4,30 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 const gis = require('async-g-i-s');
 const {unsplash, pixabay} = require("@sl-code-lords/image-library")
 
+var imgmsg =''
+if(config.LANG === 'SI') imgmsg = "```කරුණාකර වචන කිහිපයක් ලියන්න!```"
+else imgmsg = "```Please write a few words!```"
+
+var desc =''
+if(config.LANG === 'SI') desc = "ගූගල් හි අදාළ පින්තූර සෙවීම."
+else desc = "Search for related pics on Google."
+
+var desc2 =''
+if(config.LANG === 'SI') desc2 = "unsplash.com හි අදාළ පින්තූර සෙවීම."
+else desc2 = "Search for related pics on unsplash.com."
+
+var desc3 =''
+if(config.LANG === 'SI') desc3 = "pixabay.com හි අදාළ පින්තූර සෙවීම."
+else desc3 = "Search for related pics on pixabay.com."
+
+var desc4 =''
+if(config.LANG === 'SI') desc4 = "bing හි අදාළ පින්තූර සෙවීම."
+else desc4 = "Searche for related pics on bing."
+
+var errt =''
+if(config.LANG === 'SI') errt = "*මට කිසිවක් සොයාගත නොහැකි විය :(*"
+else errt = "*I couldn't find anything :(*"
+
 
 cmd({
     pattern: "apk",
