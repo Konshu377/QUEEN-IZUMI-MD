@@ -64,8 +64,9 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
   if(data[i].thumb && !data[i].views.includes('Follow')){
 srh.push({
-title: data[i].title,
+description: data[i].title,
 description: data[i].artist + ' | ' + data[i].views + ' | '+ data[i].release + ' | '+ data[i].timestamp,
+title: i + 1,
 rowId: prefix + 'selectaud2 ' + data[i].url
 });
   }
