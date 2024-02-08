@@ -82,7 +82,7 @@ console.log('QUEEN-IZUMI-MD connected ✅')
     try {
 mek = mek.messages[0]
 if (!mek.message) return
-var id_db = require('./database/id_db')      
+var id_db = require('./lib/database/id_db')      
 mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
 if (mek.key && mek.key.remoteJid === 'status@broadcast') return
 const m = sms(conn, mek)
