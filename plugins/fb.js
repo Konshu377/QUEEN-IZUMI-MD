@@ -99,45 +99,28 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
 *📎 Url:* ${q}`
 if(!l[0]) return await reply(N_FOUND)
-var msg
+var buttons
 if(!l[1]){
-var msg = [
-    {
-	title: "",
-	rows: [
-  {title: "1", rowId: prefix + 'dvideo ' + l[0].url, description: l[0].quality + ' VIDEO'},
+var buttons = [
+  {buttonId: prefix + 'dvideo ' + l[0].url, buttonText: {displayText: l[0].quality + ' VIDEO'}, type: 1}
 ]
 } else {
-var msg = [
-  {title: "1", rowId: prefix + 'dvideo ' + l[0].url, description: l[0].quality + ' VIDEO'},
-  {title: "1", rowId: prefix + 'dvideo ' + l[1].url, description: l[1].quality + ' VIDEO'},
-	]
-    } 
+var buttons = [
+  {buttonId: prefix + 'dvideo ' + l[0].url, buttonText: {displayText: l[0].quality + ' VIDEO'}, type: 1},
+  {buttonId: prefix + 'dvideo ' + l[1].url, buttonText: {displayText: l[1].quality + ' VIDEO'}, type: 1}
 ]
-const listMessage = {
-    image: {url: 'https://media.idownloadblog.com/wp-content/uploads/2022/04/Download-Facebook-data.jpg'},
-    caption: cap,
-  footer: config.FOOTER,
-  buttonText: "🔢 Reply below number,",
-  sections,
-  contextInfo: {
-				
-				externalAdReply: { 
-					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
-					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
-					mediaType: 1,
-					sourceUrl: "" ,
-          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
-					renderLargerThumbnail: false,
-          showAdAttribution: true
-         }}	
 }
-
-await conn.replyList(from, listMessage ,{ quoted : mek }) 
-
+const buttonMessage = {
+    image: {url: 'https://media.idownloadblog.com/wp-content/uploads/2022/04/Download-Facebook-data.jpg'},
+    caption: dat,
+    footer: config.FOOTER,
+    buttons: buttons,
+    headerType: 4
+}
+return await conn.buttonMessage(from, buttonMessage,mek)
 } catch (e) {
-  reply(N_FOUND)
-  l(e)
+l(e)
+await reply(N_FOUND)
 }
 })
 
