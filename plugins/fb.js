@@ -101,14 +101,14 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 if(!l[0]) return await reply(N_FOUND)
 var msg
 if(!l[1]){
-const sections = [
+var msg = [
     {
 	title: "",
 	rows: [
   {title: "1", rowId: prefix + 'dvideo ' + l[0].url, description: l[0].quality + ' VIDEO'},
 ]
 } else {
-const sections = [
+var msg = [
   {title: "1", rowId: prefix + 'dvideo ' + l[0].url, description: l[0].quality + ' VIDEO'},
   {title: "1", rowId: prefix + 'dvideo ' + l[1].url, description: l[1].quality + ' VIDEO'},
 	]
