@@ -81,7 +81,7 @@ else urlneed = "*Please give me facebook video url..*"
 
 cmd({
   pattern: "fb",
-  react: '🫧',
+  react: '#️⃣',
   alias: ["fbdl"],
   desc: desc,
   category: "download",
@@ -90,53 +90,34 @@ cmd({
 },
 async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-    var msg = mek
 if (!fbreg(q)) return await  reply(urlneed)
 let data = await fbDownloader(q)
 let l = data.download
-let dat = `*🫧QUEEN-IZUMI FB DOWNLOADER 📥*
+let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 
-*✏️ ʀᴇꜱᴜʟᴛ:* ${q}
-*🤖 ʀᴇǫᴜᴇꜱᴛᴇʀ:* ${pushname}`
+   *FB DOWNLOADER*
+
+*📎 Url:* ${q}`
 if(!l[0]) return await reply(N_FOUND)
 var buttons
 if(!l[1]){
-const sections = [
-    {
-	title: "",
-	rows: [
-	    {title: "1", rowId: prefix + 'dvideo' + l[0].url, description: l[0].quality + 'VIDEO'}
-} else {
-const sections = [
-    {
-	title: "",
-	rows: [
-	    {title: "1", rowId: prefix + 'dvideo' + l[0].url, description: l[0].quality + 'VIDEO'},
-	    {title: "1", rowId: prefix + 'dvideo' + l[0].url, description: l[0].quality + 'VIDEO'}
-
-	]
-    } 
+var buttons = [
+  {buttonId: prefix + 'dvideo ' + l[0].url, buttonText: {displayText: l[0].quality + ' VIDEO'}, type: 1}
 ]
-const listMessage = {
+} else {
+var buttons = [
+  {buttonId: prefix + 'dvideo ' + l[0].url, buttonText: {displayText: l[0].quality + ' VIDEO'}, type: 1},
+  {buttonId: prefix + 'dvideo ' + l[1].url, buttonText: {displayText: l[1].quality + ' VIDEO'}, type: 1}
+]
+}
+const buttonMessage = {
     image: {url: 'https://media.idownloadblog.com/wp-content/uploads/2022/04/Download-Facebook-data.jpg'},
     caption: dat,
-    footer: `*ǫᴜᴇᴇɴ-ɪᴢᴜᴍɪ ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ ʙᴏᴛ:ᴠ-ɪ*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴇᴄʜɴɪᴄᴀʟ ᴄʏʙᴇʀꜱ*`,
-    buttonText: "```🔢 Reply below number you want to get facebook video quality```",
-    sections,
-    contextInfo: {
-				
-				externalAdReply: { 
-					title: '🕸️𝗜𝗭𝗨𝗠𝗜𝗕𝗢𝗧 𝗠𝗗 V1🫧',
-					body: 'ɪᴢᴜᴍɪ ᴍᴅ ᴡɪᴛʜ ʙᴇꜱᴛ ꜰᴇᴀᴛᴜʀᴇꜱ',
-					mediaType: 1,
-					sourceUrl: "" ,
-          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
-					renderLargerThumbnail: false,
-          showAdAttribution: true
-         }}	
+    footer: config.FOOTER,
+    buttons: buttons,
+    headerType: 4
 }
-return await conn.replyList(from, listMessage ,{ quoted : msg }) 
-}
+return await conn.buttonMessage(from, buttonMessage,mek)
 } catch (e) {
 l(e)
 await reply(N_FOUND)
@@ -152,7 +133,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 await conn.sendMessage(from, { react: { text: '📥', key: mek.key }})
-await conn.sendMessage(from, { video: { url: q }, caption: '*•ǫᴜᴇᴇɴ-ɪᴢᴜᴍɪ ꜰʙ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ•*'}, { quoted: mek })
+await conn.sendMessage(from, { video: { url: q }, caption: config.FOOTER}, { quoted: mek })
 await conn.sendMessage(from, { react: { text: '✔', key: mek.key }})
 } catch (e) {
   reply('*ERROR !!*')
