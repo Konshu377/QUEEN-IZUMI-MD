@@ -34,7 +34,7 @@ var srh = [];
 for (var i = 0; i < data.length; i++) {
 srh.push({
 description: data[i].name,
-title: i + 1,
+title: i + 1.1,
 rowId: prefix + 'dapk ' + data[i].id
 });
 }
