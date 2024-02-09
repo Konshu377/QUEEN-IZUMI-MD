@@ -57,7 +57,7 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 *📃 Title:* ${l.title}
 *✍🏼 Author:* ${l.author}`
 
-let generatesections = [
+let sections = [
        {
 	title: "",
 	rows: [
