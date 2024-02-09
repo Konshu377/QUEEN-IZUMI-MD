@@ -57,36 +57,40 @@ let dat = `[🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚]
 *📃 Title:* ${l.title}
 *✍🏼 Author:* ${l.author}`
 
-let generatebutton = [{
-  buttonId: `${prefix}dvideo ${l.nowm}`,
-  buttonText: {
-      displayText: 'VIDEO NO WATERMARK'
-  },
-  type: 1
-},{
-  buttonId: `${prefix}dvideo ${l.watermark}`,
-  buttonText: {
-      displayText: 'VIDEO WITH WATERMARK'
-  },
-  type: 1
-},{
-  buttonId: `${prefix}dau ${l.audio}`,
-  buttonText: {
-      displayText: 'AUDIO DOWNLOAD'
-  },
-  type: 1
-}]
-let buttonMessaged = {
+let generatesections = [
+       {
+	title: "",
+	rows: [
+    {title: "1", rowId: `${prefix}dvideo ${l.nowm}`, description: 'video without Watermark'},
+    {title: "2", rowId: `${prefix}dvideo ${l.watermark}`, description: 'Video with Watermark'},
+    {title: "3", rowId: `${prefix}dau ${l.audio}`, description: 'Download audio'},
+	]
+    } 
+]
+const listMessage = {
   image: { url: l.thumbnail },
   caption: dat,
   footer: config.FOOTER,
-  headerType: 4,
-  buttons: generatebutton
-};
-return await conn.buttonMessage(from, buttonMessaged,mek)
+  buttonText: "🔢 Reply below number,",
+  sections,
+contextInfo: {
+				
+				externalAdReply: { 
+					title: '🧚 ＱＵＥＥＮ -ＩＺＵＭＩ - ＭＤ 🧚',
+					body: 'ᴀɴ ᴜꜱᴇʀ ʙᴏᴛ ꜰᴏʀ ᴡʜᴀᴛꜱᴀᴘᴘ',
+					mediaType: 1,
+					sourceUrl: "" ,
+          thumbnailUrl: 'https://telegra.ph/file/ba8ea739e63bf28c30b37.jpg' ,
+					renderLargerThumbnail: false,
+          showAdAttribution: true
+         }}	
+}
+
+await conn.replyList(from, listMessage ,{ quoted : mek }) 
+
 } catch (e) {
-reply(N_FOUND)
-l(e)
+  reply(N_FOUND)
+  l(e)
 }
 })
 
